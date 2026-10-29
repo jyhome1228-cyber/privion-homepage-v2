@@ -2095,3 +2095,56 @@ body {
   width: 44px;
   height: 44px;
 }
+/* =========================================================
+   PRIVION KR — 2026-10-29 visual hierarchy refinement
+   Wider 1440px editorial content, wider header, calmer type.
+   Keep all source page content and markup unchanged.
+========================================================= */
+:root { --pv-container: 1440px; --pv-wide: 1560px; }
+.pv-container { max-width: 1440px; padding-left: 48px; padding-right: 48px; }
+.pv-wide { max-width: 1560px; padding-left: 48px; padding-right: 48px; }
+.pv-header-inner { max-width: 1560px; padding-left: 48px; padding-right: 48px; grid-template-columns: 165px minmax(0, 1fr) 165px; }
+.pv-nav { gap: clamp(24px, 3.1vw, 56px); }
+.pv-nav > a, .pv-nav-item > a { padding-left: 14px; padding-right: 14px; }
+.pv-nav > a::after, .pv-nav-item > a::after { left: 14px; width: calc(100% - 28px); }
+.pv-footer-inner { padding-left: max(48px, calc((100vw - 1440px) / 2 + 48px)) !important; padding-right: max(48px, calc((100vw - 1440px) / 2 + 48px)) !important; }
+.pv-section-title { font-size: clamp(25px, 2.2vw, 30px); }
+.pv-home-hero-title { font-size: clamp(66px, 6.7vw, 104px) !important; line-height: .94 !important; }
+.pv-home-hero-lead { font-size: clamp(17px, 1.45vw, 20px) !important; }
+.pv-home-intro-title { font-size: clamp(32px, 2.9vw, 42px) !important; line-height: 1.25 !important; }
+.pv-home-intro-sub { font-size: clamp(21px, 2vw, 27px) !important; }
+.pv-home-intro-desc { max-width: 860px; font-size: 16px !important; }
+.pv-home-product-name, .pv-other-name { font-size: clamp(20px, 1.7vw, 23px) !important; line-height: 1.13 !important; letter-spacing: -.055em !important; }
+.pv-system-name { font-size: clamp(29px, 2.5vw, 36px) !important; }
+.pv-home-feature-title { font-size: clamp(27px, 2.5vw, 36px) !important; }
+.pv-tech-title { font-size: clamp(38px, 3.4vw, 48px) !important; line-height: 1.1 !important; letter-spacing: -.065em !important; }
+.pv-tech-subtitle { font-size: clamp(23px, 2.2vw, 30px) !important; }
+.pv-compare-title { font-size: clamp(28px, 2.3vw, 34px) !important; }
+.pv-product-hero-text .pv-product-name { font-size: clamp(32px, 2.8vw, 40px) !important; line-height: 1.18 !important; }
+.pv-application-title, .pv-page-title { font-size: clamp(30px, 2.65vw, 40px) !important; }
+.pv-application-item-title, .pv-tech-row-title { font-size: clamp(21px, 1.8vw, 25px) !important; }
+.pv-fl-title { font-size: clamp(25px, 2.1vw, 32px) !important; }
+.pv-policy-title, .pv-search-title { font-size: clamp(36px, 3.2vw, 48px) !important; }
+.pv-home-product-desc, .pv-other-desc, .pv-detail-app-desc { line-height: 1.6; }
+.pv-product-hero-text .pv-product-desc, .pv-section-desc, .pv-tech-desc, .pv-application-desc { line-height: 1.75; }
+@media (min-width: 1281px) {
+  .pv-home-hero-inner { max-width: 1560px !important; padding-left: 48px !important; padding-right: 48px !important; }
+  .pv-home-product-grid { gap: 18px !important; }
+  .pv-detail-app-grid { gap: 40px 20px; }
+}
+@media (max-width: 1024px) {
+  .pv-container, .pv-wide, .pv-header-inner { padding-left: 32px; padding-right: 32px; }
+  .pv-nav { gap: 4px; }
+  .pv-nav > a, .pv-nav-item > a { padding-left: 12px; padding-right: 12px; }
+  .pv-footer-inner { padding-left: 32px !important; padding-right: 32px !important; }
+}
+@media (max-width: 768px) {
+  .pv-container, .pv-wide, .pv-header-inner { padding-left: 22px; padding-right: 22px; }
+  .pv-home-hero-title { font-size: clamp(52px, 12vw, 72px) !important; }
+  .pv-home-intro-title { font-size: clamp(27px, 6vw, 34px) !important; }
+  .pv-home-intro-sub { font-size: 21px !important; }
+  .pv-tech-title { font-size: 36px !important; }
+  .pv-product-hero-text .pv-product-name { font-size: 32px !important; }
+  .pv-compare-title { font-size: 29px !important; }
+  .pv-footer-inner { padding-left: 28px !important; padding-right: 28px !important; }
+}
