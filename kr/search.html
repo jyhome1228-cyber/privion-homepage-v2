@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T54JNKGQ');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- =========================================================
+    PRIVION SEARCH PAGE
+    정적 JSON 데이터 기반 사이트 내부 검색 페이지입니다.
+
+    검색 데이터:
+    assets/data/search-data.json
+
+    검색 스크립트:
+    assets/js/privion-search.js
+  ========================================================= -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>검색 | Privion</title>
+
+  <meta
+    name="description"
+    content="프리비온 홈페이지 내부 검색 페이지입니다."
+  >
+
+  <meta
+    name="keywords"
+    content="Privion, 프리비온, 검색, FMCW LiDAR, 산업용 LiDAR, 라이다"
+  >
+
+  <meta name="author" content="Privion">
+  <meta name="contact" content="privion-lidar@dongwon.com">
+  <meta name="telephone" content="02-589-2312">
+
+  <!-- Naver Site Verification -->
+  <meta name="naver-site-verification" content="7a2d3bdc939d1acfb9933c8ee472e83bf4a1f71d">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="검색 | Privion">
+  <meta property="og:description" content="프리비온 홈페이지 내부 검색 페이지">
+  <meta property="og:url" content="https://www.privionlidar.com/kr/search.html">
+  <meta property="og:image" content="https://www.privionlidar.com/assets/images/logo/catalog-cover.png">
+  <meta property="og:site_name" content="Privion">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="검색 | Privion">
+  <meta name="twitter:description" content="프리비온 홈페이지 내부 검색 페이지">
+  <meta name="twitter:image" content="https://www.privionlidar.com/assets/images/logo/catalog-cover.png">
+
+  <!-- favicon (Google 검색결과 노출용 / 48px 배수 규격) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  >
+  <link rel="stylesheet" href="assets/css/privion.css">
+
+  <style>
+    /* =========================================================
+       SEARCH PAGE LOCAL STYLE
+    ========================================================= */
+
+    .pv-search-page {
+      min-height: 62vh;
+    }
+
+    /* =========================================================
+       FOOTER COMMON OVERRIDE
+       검정 배경 전체폭 적용
+    ========================================================= */
+
+    .pv-footer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    .pv-footer-inner {
+      width: 100%;
+      max-width: none;
+      min-height: auto;
+      margin: 0;
+      padding: 58px max(84px, calc((100vw - 1280px) / 2 + 64px));
+      background: #000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 60px;
+      box-sizing: border-box;
+    }
+
+    .pv-footer-info {
+      margin-top: 24px;
+      line-height: 1.72;
+    }
+
+    .pv-footer-links {
+      display: none;
+    }
+
+    .pv-footer-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      min-height: 120px;
+    }
+
+    .pv-copy {
+      margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .pv-footer-inner {
+        padding: 52px 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pv-footer-inner {
+        padding: 44px 28px;
+        flex-direction: column;
+        gap: 34px;
+      }
+
+      .pv-footer-right {
+        min-height: auto;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+<link rel="canonical" href="https://www.privionlidar.com/kr/search.html">
+  <link rel="alternate" hreflang="ko" href="https://www.privionlidar.com/kr/search.html">
+  <link rel="alternate" hreflang="en" href="https://www.privionlidar.com/en/search.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.privionlidar.com/en/search.html">
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T54JNKGQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  <!-- HEADER -->
+  <header class="pv-header">
+    <div class="pv-header-inner">
+      <a href="index.html" class="pv-logo" aria-label="Privion Home">
+        <img
+          src="assets/images/logo/privion-logo.png"
+          alt="privion"
+          class="pv-logo-image"
+        >
+      </a>
+
+      <nav class="pv-nav" aria-label="Main Navigation">
+        <a href="technology.html">기술 소개</a>
+      <div class="pv-nav-item">
+        <a href="product.html" aria-haspopup="true" aria-expanded="false">제품</a>
+
+        <div class="pv-nav-sub" role="menu" aria-label="Product menu">
+          <div class="pv-nav-sub-inner">
+          <div class="pv-nav-sub-group">
+            <p class="pv-nav-sub-heading">Product</p>
+
+            <a href="product-dl100.html" class="pv-nav-sub-link" role="menuitem">
+              <span class="pv-nav-sub-text">
+                <span class="pv-nav-sub-name">DL100</span>
+                <span class="pv-nav-sub-desc">컴팩트 산업용 감지형</span>
+              </span>
+            </a>
+
+            <a href="product-dl100s.html" class="pv-nav-sub-link" role="menuitem">
+              <span class="pv-nav-sub-text">
+                <span class="pv-nav-sub-name">DL100S</span>
+                <span class="pv-nav-sub-desc">컴팩트 산업용 감지/스캔형</span>
+              </span>
+            </a>
+
+            <a href="product-dl150.html" class="pv-nav-sub-link" role="menuitem">
+              <span class="pv-nav-sub-text">
+                <span class="pv-nav-sub-name">DL150</span>
+                <span class="pv-nav-sub-desc">야외 환경 장거리 감지형</span>
+              </span>
+            </a>
+
+            <a href="product-dl150s.html" class="pv-nav-sub-link" role="menuitem">
+              <span class="pv-nav-sub-text">
+                <span class="pv-nav-sub-name">DL150S</span>
+                <span class="pv-nav-sub-desc">야외 환경 장거리 감지/스캔형</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="pv-nav-sub-group">
+            <p class="pv-nav-sub-heading">Systems</p>
+
+            <a href="product-dl100fl.html" class="pv-nav-sub-link" role="menuitem">
+              <span class="pv-nav-sub-text">
+                <span class="pv-nav-sub-name">DL100FL</span>
+                <span class="pv-nav-sub-desc">지게차 안전 시스템</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+        <a href="application.html">적용 분야</a>
+        <a href="contact.html">문의</a>
+      </nav>
+
+      <div class="pv-header-right">
+      <div class="pv-lang">
+        <button type="button" class="pv-lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="언어 선택">
+          <svg class="pv-lang-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg><span class="pv-lang-cur">KR</span><svg class="pv-lang-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9.5l6 5.5 6-5.5"></path></svg>
+        </button>
+        <div class="pv-lang-menu" role="menu">
+          <a href="#" class="pv-lang-item" data-lang="kr" role="menuitem">한국어</a>
+          <a href="#" class="pv-lang-item" data-lang="en" role="menuitem">English</a>
+        </div>
+      </div>
+        <a href="search.html" class="pv-header-icon is-active" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+              stroke-width="1.8"
+            ></circle>
+            <path
+              d="M16.5 16.5L21 21"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH -->
+  <main class="pv-search-page">
+    <section class="pv-search-section">
+      <div class="pv-container">
+        <h1 class="pv-search-title">Search</h1>
+
+        <div class="pv-search-box">
+          <input
+            type="search"
+            id="pv-search-input"
+            placeholder="검색어를 입력하세요."
+            autocomplete="off"
+            aria-label="사이트 검색"
+          >
+        </div>
+
+        <div id="pv-search-results" class="pv-search-results">
+          <p class="pv-search-empty">
+            검색어를 입력하면 관련 페이지가 표시됩니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="pv-footer">
+    <div class="pv-footer-inner">
+      <div class="pv-footer-left">
+        <a href="index.html" class="pv-logo" aria-label="Privion Home">
+          <img
+            src="assets/images/logo/privion-logo.png"
+            alt="privion"
+            class="pv-logo-image"
+          >
+        </a>
+
+        <p class="pv-footer-info">
+          동원산업(주)<br>
+          Web www.privionlidar.com<br>
+          Tel 02-589-2312<br>
+          Email privion-lidar@dongwon.com<br>
+          본사 : 서울시 서초구 마방로68 동원산업빌딩<br>
+          연구소 : 경기도 성남시 분당구 삼평동 621 판교이노밸리 제B동 6층 604-4호
+        </p>
+      </div>
+
+      <div class="pv-footer-right">
+        <p class="pv-copy">
+          Copyright © Privion. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/privion-common.js"></script>
+  <script src="assets/js/privion-search.js"></script>
+</body>
+</html>
