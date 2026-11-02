@@ -353,7 +353,7 @@ function ready(){
  form.appendChild(box);
  let index=[],loaded=false;
  const fallback=[{"title":"DL100","category":"제품","description":"컴팩트 산업용 감지형 라이다","url":"product-dl100.html","keywords":"dl100"},{"title":"DL100S","category":"제품","description":"컴팩트 산업용 감지·스캔형 라이다","url":"product-dl100s.html","keywords":"dl100s"},{"title":"DL100FL","category":"시스템","description":"지게차 안전 시스템","url":"product-dl100fl.html","keywords":"dl100fl 지게차"},{"title":"DL150","category":"제품","description":"야외환경 산업용 감지형 라이다","url":"product-dl150.html","keywords":"dl150"},{"title":"DL150S","category":"제품","description":"야외환경 산업용 감지·스캔형 라이다","url":"product-dl150s.html","keywords":"dl150s"}];
- function normalize(x){return String(x||'').normalize('NFKC').toLowerCase().replace(/[\\s._\\/-]+/g,'');}
+ function normalize(x){return String(x||'').normalize('NFKC').toLowerCase().replace(/[\s._\/-]+/g,'');}
  function render(){
   box.replaceChildren();
   const q=normalize(input.value);
