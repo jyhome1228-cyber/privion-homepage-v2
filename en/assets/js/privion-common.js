@@ -609,7 +609,7 @@
     injectEnglishStyles();
     setPageMetadata();
     translateCommon();
-    translateHomeLikePage();
+    if (getPath() !== 'index.html') translateHomeLikePage();
     translateTechnology();
     translateApplication();
     translateProductDetail();
@@ -623,4 +623,36 @@
   });
 
   window.privionHideMapPlaceholder = hideMapPlaceholder;
+})();
+
+
+/* V2 language switch and menu parity */
+(function(){
+function wireEnglish(){
+  var path=location.pathname.split('/').pop()||'index.html';
+  var krPath='../kr/'+path;
+  var right=document.querySelector('.pv-header-right');
+  var lang=document.querySelector('.pv-lang');
+  if(right&&!lang){
+    lang=document.createElement('div');lang.className='pv-lang';
+    lang.innerHTML='<button type="button" class="pv-lang-btn" aria-label="Choose language" aria-expanded="false"><span class="pv-lang-cur">EN</span> ▾</button><div class="pv-lang-menu"><a href="'+krPath+'" data-lang="kr">한국어</a><a href="'+path+'" data-lang="en">English</a></div>';
+    right.insertBefore(lang,right.firstChild);
+  }
+  if(lang){
+    var items=lang.querySelectorAll('[data-lang]');
+    items.forEach(function(a){a.setAttribute('href',a.getAttribute('data-lang')==='kr'?krPath:path);});
+    var btn=lang.querySelector('.pv-lang-btn');
+    if(btn)btn.addEventListener('click',function(e){e.preventDefault();lang.classList.toggle('is-open');btn.setAttribute('aria-expanded',lang.classList.contains('is-open')?'true':'false');});
+  }
+  var dropdown=document.querySelector('.pv-nav-item');
+  if(!dropdown){var link=document.querySelector('.pv-nav a[href="product.html"]');if(link){
+   var item=document.createElement('div');item.className='pv-nav-item';
+   link.parentNode.insertBefore(item,link);item.appendChild(link);
+   var sub=document.createElement('div');sub.className='pv-nav-sub';
+   sub.innerHTML='<div class="pv-nav-sub-inner"><div class="pv-nav-sub-group"><p class="pv-nav-sub-heading">Products</p><a href="product-dl100.html" class="pv-nav-sub-link"><span class="pv-nav-sub-text"><span class="pv-nav-sub-name">DL100</span><span class="pv-nav-sub-desc">Compact detection</span></span></a><a href="product-dl100s.html" class="pv-nav-sub-link"><span class="pv-nav-sub-text"><span class="pv-nav-sub-name">DL100S</span><span class="pv-nav-sub-desc">Compact detection / scanning</span></span></a><a href="product-dl150.html" class="pv-nav-sub-link"><span class="pv-nav-sub-text"><span class="pv-nav-sub-name">DL150</span><span class="pv-nav-sub-desc">Outdoor detection</span></span></a><a href="product-dl150s.html" class="pv-nav-sub-link"><span class="pv-nav-sub-text"><span class="pv-nav-sub-name">DL150S</span><span class="pv-nav-sub-desc">Outdoor detection / scanning</span></span></a></div><div class="pv-nav-sub-group"><p class="pv-nav-sub-heading">Systems</p><a href="product-dl100fl.html" class="pv-nav-sub-link"><span class="pv-nav-sub-text"><span class="pv-nav-sub-name">DL100FL</span><span class="pv-nav-sub-desc">Forklift Safety System</span></span></a></div></div>';
+   item.appendChild(sub);
+  }}
+  document.querySelectorAll('.pv-footer-left').forEach(function(left){if(left.querySelector('.pv-footer-brandline'))return;var logo=left.querySelector('.pv-logo');if(logo){var line=document.createElement('p');line.className='pv-footer-brandline';line.textContent='Industrial FMCW LiDAR solutions developed in Korea.';logo.insertAdjacentElement('afterend',line);}});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wireEnglish);else wireEnglish();
 })();
