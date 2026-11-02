@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en"><head>
+  <!-- =========================================================
+    PRIVION TECHNOLOGY PAGE
+    기술 소개 페이지입니다.
+    이미지 경로는 assets/images/logo/ 기준입니다.
+  ========================================================= -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FMCW LiDAR Technology | PRIVION</title>
+
+  <meta name="description" content="Discover PRIVION FMCW LiDAR technology for simultaneous distance and velocity measurement, interference resistance, and reliable industrial sensing.">
+
+  <meta name="keywords" content="PRIVION, FMCW LiDAR, industrial LiDAR, LiDAR sensor, automation, robotics, AGV, AMR">
+
+  <meta name="author" content="PRIVION">
+  <meta name="contact" content="privion-lidar@dongwon.com">
+  <meta name="telephone" content="+82-2-589-2312">
+
+  <!-- Naver Site Verification -->
+  <meta name="naver-site-verification" content="7a2d3bdc939d1acfb9933c8ee472e83bf4a1f71d">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FMCW LiDAR Technology | PRIVION">
+  <meta property="og:description" content="Discover PRIVION FMCW LiDAR technology for simultaneous distance and velocity measurement, interference resistance, and reliable industrial sensing.">
+  <meta property="og:url" content="https://www.privionlidar.com/technology.html">
+  <meta property="og:image" content="https://www.privionlidar.com/assets/images/logo/fmcw-main.png">
+  <meta property="og:site_name" content="PRIVION">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FMCW LiDAR Technology | PRIVION">
+  <meta name="twitter:description" content="Discover PRIVION FMCW LiDAR technology for simultaneous distance and velocity measurement, interference resistance, and reliable industrial sensing.">
+  <meta name="twitter:image" content="https://www.privionlidar.com/assets/images/logo/fmcw-main.png">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="assets/css/privion.css">
+
+  <style>
+    /* =========================================================
+       TECHNOLOGY PAGE LOCAL STYLE
+    ========================================================= */
+
+    .pv-tech-main {
+      padding: 140px 0 134px;
+    }
+
+    .pv-tech-head {
+      margin-bottom: 74px;
+    }
+
+    .pv-tech-title {
+      margin: 0 0 30px;
+      color: #000;
+      font-size: clamp(44px, 4.6vw, 72px);
+      font-weight: 760;
+      line-height: 0.95;
+      letter-spacing: -0.085em;
+    }
+
+    .pv-tech-subtitle {
+      margin: 0 0 44px;
+      color: #000;
+      font-size: clamp(27px, 2.35vw, 38px);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.065em;
+    }
+
+    .pv-tech-desc {
+      max-width: 790px;
+      margin: 0;
+      color: #777;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.82;
+      letter-spacing: -0.035em;
+    }
+
+    .pv-tech-visual {
+      width: 100%;
+      margin-bottom: 54px;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #f3f4f5;
+    }
+
+    .pv-tech-visual img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pv-tech-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 92px;
+      padding: 43px 0;
+      border-bottom: 1px solid #dedede;
+    }
+
+    .pv-tech-row-title {
+      margin: 0;
+      color: #000;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.28;
+      letter-spacing: -0.055em;
+    }
+
+    .pv-tech-row-text {
+      margin: 0;
+      color: #777;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.78;
+      letter-spacing: -0.035em;
+    }
+
+    .pv-tech-banner {
+      width: 100%;
+      margin: 92px 0 46px;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #f3f4f5;
+    }
+
+    .pv-tech-banner img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pv-tech-note {
+      margin: 0 0 58px;
+      color: #777;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.82;
+      letter-spacing: -0.035em;
+    }
+
+    /* Compare */
+    .pv-compare-wrap {
+      position: relative;
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .pv-compare {
+      position: relative;
+      display: grid;
+      grid-template-columns: 170px minmax(300px, 1fr) minmax(300px, 1fr);
+      gap: 0;
+      align-items: stretch;
+      min-height: 760px;
+      background: #f3f4f5;
+      border-radius: 7px;
+      overflow: visible;
+    }
+
+    .pv-compare-labels {
+      padding: 188px 0 70px;
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      align-items: center;
+    }
+
+    .pv-compare-labels span {
+      padding-left: 46px;
+      color: #000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+    }
+
+    .pv-compare-card {
+      position: relative;
+      z-index: 2;
+      margin: -38px 0 -38px;
+      padding: 74px 66px 66px;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    .pv-compare-card.is-muted {
+      z-index: 1;
+      margin: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .pv-compare-title {
+      margin: 0 0 6px;
+      color: #000;
+      font-size: 42px;
+      font-weight: 760;
+      line-height: 0.98;
+      letter-spacing: -0.08em;
+    }
+
+    .pv-compare-title.is-muted-title {
+      color: #8d8d8d;
+    }
+
+    .pv-compare-sub {
+      margin: 0 0 64px;
+      color: #777;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+    }
+
+    .pv-compare-list {
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      gap: 0;
+      min-height: 560px;
+    }
+
+    .pv-compare-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4px 0;
+    }
+
+    .pv-compare-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #000;
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.45;
+      letter-spacing: -0.045em;
+    }
+
+    .pv-compare-item p {
+      margin: 0;
+      color: #777;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: -0.035em;
+    }
+
+    .pv-compare-footnote {
+      margin: 78px 0 0;
+      text-align: right;
+      color: #777;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: -0.03em;
+    }
+
+    /* =========================================================
+       FOOTER COMMON OVERRIDE
+       검정 배경 전체폭 적용
+    ========================================================= */
+
+    .pv-footer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    .pv-footer-inner {
+      width: 100%;
+      max-width: none;
+      min-height: auto;
+      margin: 0;
+      padding: 58px max(84px, calc((100vw - 1280px) / 2 + 64px));
+      background: #000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 60px;
+      box-sizing: border-box;
+    }
+
+    .pv-footer-info {
+      margin-top: 24px;
+      line-height: 1.72;
+    }
+
+    .pv-footer-links {
+      display: none;
+    }
+
+    .pv-footer-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      min-height: 120px;
+    }
+
+    .pv-copy {
+      margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .pv-tech-main {
+        padding: 110px 0 110px;
+      }
+
+      .pv-tech-row {
+        gap: 54px;
+      }
+
+      .pv-compare {
+        grid-template-columns: 120px 1fr 1fr;
+      }
+
+      .pv-compare-card,
+      .pv-compare-card.is-muted {
+        padding: 58px 38px 54px;
+      }
+
+      .pv-compare-title {
+        font-size: 34px;
+      }
+
+      .pv-compare-labels span {
+        padding-left: 26px;
+        font-size: 14px;
+      }
+
+      .pv-footer-inner {
+        padding: 52px 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pv-tech-main {
+        padding: 82px 0 86px;
+      }
+
+      .pv-tech-head {
+        margin-bottom: 42px;
+      }
+
+      .pv-tech-title {
+        margin-bottom: 22px;
+        font-size: 42px;
+      }
+
+      .pv-tech-subtitle {
+        margin-bottom: 28px;
+        font-size: 24px;
+      }
+
+      .pv-tech-desc,
+      .pv-tech-note,
+      .pv-tech-row-text {
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .pv-tech-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 32px 0;
+      }
+
+      .pv-tech-row-title {
+        font-size: 22px;
+      }
+
+      .pv-tech-banner {
+        margin: 62px 0 34px;
+      }
+
+      .pv-compare {
+        display: block;
+        min-height: 0;
+        background: transparent;
+        border-radius: 0;
+      }
+
+      .pv-compare-labels {
+        display: none;
+      }
+
+      .pv-compare-card,
+      .pv-compare-card.is-muted {
+        margin: 0 0 18px;
+        padding: 42px 30px;
+        background: #fff;
+        border: 1px solid #ededed;
+        border-radius: 7px;
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.075);
+      }
+
+      .pv-compare-card.is-muted {
+        background: #f3f4f5;
+      }
+
+      .pv-compare-title {
+        font-size: 32px;
+      }
+
+      .pv-compare-sub {
+        margin-bottom: 34px;
+      }
+
+      .pv-compare-list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        min-height: 0;
+      }
+
+      .pv-compare-item {
+        display: block;
+        padding: 0;
+      }
+
+      .pv-compare-footnote {
+        margin-top: 42px;
+        text-align: left;
+        font-size: 11px;
+      }
+
+      .pv-footer-inner {
+        padding: 44px 28px;
+        flex-direction: column;
+        gap: 34px;
+      }
+
+      .pv-footer-right {
+        min-height: auto;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pv-tech-title {
+        font-size: 36px;
+      }
+
+      .pv-tech-subtitle {
+        font-size: 21px;
+      }
+
+      .pv-tech-row-title {
+        font-size: 20px;
+      }
+
+      .pv-compare-card,
+      .pv-compare-card.is-muted {
+        padding: 34px 24px;
+      }
+
+      .pv-compare-title {
+        font-size: 29px;
+      }
+    }
+  </style>
+
+<link rel="stylesheet" href="assets/css/privion-en.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="pv-header">
+    <div class="pv-header-inner">
+      <a href="index.html" class="pv-logo" aria-label="PRIVION Home">
+        <img src="assets/images/logo/privion-logo.png" alt="PRIVION" class="pv-logo-image">
+      </a>
+
+      <nav class="pv-nav" aria-label="Main Navigation">
+        <a href="technology.html" class="is-active">Technology</a>
+        <a href="product.html">Products</a>
+        <a href="application.html">Applications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="pv-header-right">
+        <a href="search.html" class="pv-header-icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
+            <path d="M16.5 16.5L21 21" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TECHNOLOGY MAIN -->
+  <main class="pv-tech-main">
+    <div class="pv-container">
+
+      <section class="pv-tech-head">
+        <h1 class="pv-tech-title">FMCW LiDAR</h1>
+
+        <h2 class="pv-tech-subtitle">PRIVION DL Series — FMCW LiDAR for Industrial Environments</h2>
+
+        <p class="pv-tech-desc">The DL Series maintains reliable detection performance in conditions where conventional LiDAR may be vulnerable, including snow, rain, intense sunlight, dust, and smoke.<br>Based on frequency-modulated continuous-wave technology, it analyzes the frequency characteristics of reflected signals to measure distance and velocity simultaneously.</p>
+      </section>
+
+      <section class="pv-tech-visual">
+        <img src="assets/images/logo/fmcw-main.png" alt="PRIVION DL Series FMCW LiDAR">
+      </section>
+
+      <section class="pv-tech-row">
+        <h3 class="pv-tech-row-title">01 Optimized for Large-Scale Automation</h3>
+
+        <p class="pv-tech-row-text">Each DL Series LiDAR uses a unique signal pattern. Even when many AGVs and AMRs operate in a dense environment, the sensors remain resistant to mutual interference regardless of fleet size. Systems can be deployed freely without additional anti-interference design or restrictive sensor placement.</p>
+      </section>
+
+      <section class="pv-tech-row">
+        <h3 class="pv-tech-row-title">02 Distance and Velocity from a Single Sensor</h3>
+
+        <p class="pv-tech-row-text">Distance and velocity of moving objects are measured simultaneously, eliminating the need for a separate velocity sensor. This simplifies system architecture and improves response speed in applications such as cranes and AMRs.</p>
+      </section>
+
+      <section class="pv-tech-row">
+        <h3 class="pv-tech-row-title">03 Reliable Detection of Challenging Materials</h3>
+
+        <p class="pv-tech-row-text">The DL Series addresses common LiDAR challenges such as diffuse reflections from metal surfaces and low reflectivity from black materials through a high-power 1550 nm wavelength and precise FMCW signal analysis. Objects can be detected accurately even when reflected signals are weak or irregular.</p>
+      </section>
+
+      <section class="pv-tech-banner">
+        <img src="assets/images/logo/beyond-tof.png" alt="Beyond ToF Beyond Limits">
+      </section>
+
+      <p class="pv-tech-note">Industrial LiDAR must maintain reliable detection not only under simple test conditions but also around complex metal structures and difficult environments. Fog, external light sources, mirror-like surfaces, strong ambient light, and multiple reflectors can reduce detection performance and introduce signal interference in conventional ToF LiDAR. These limitations require sensing and signal-processing architectures designed specifically for industrial environments.</p>
+
+      <!-- COMPARE -->
+      <section class="pv-compare-wrap">
+        <div class="pv-compare">
+
+          <div class="pv-compare-labels">
+            <span>Operating Principle</span>
+            <span>Velocity Measurement</span>
+            <span>Interference Immunity</span>
+            <span>Resolution / Accuracy</span>
+            <span>Adverse Weather</span>
+            <span>Primary Wavelength</span>
+          </div>
+
+          <article class="pv-compare-card">
+            <h3 class="pv-compare-title">FMCW LiDAR</h3>
+            <p class="pv-compare-sub">(Frequency Modulated Continuous Wave)</p>
+
+            <div class="pv-compare-list">
+              <div class="pv-compare-item">
+                <strong>Frequency-Modulated Continuous Wave</strong>
+                <p>A continuously emitted laser changes frequency linearly. Distance and velocity are calculated simultaneously from the frequency difference between the transmitted and reflected waves.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Velocity Measurement Using the Doppler Effect</strong>
+                <p>Distance and velocity information are precisely separated and extracted from the frequency difference between the transmitted and reflected signals.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Strong Interference Immunity</strong>
+                <p>Coherent detection provides robust resistance to ambient light and mutual interference between sensors.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>High Resolution and Accuracy</strong>
+                <p>High-resolution, high-accuracy distance measurement supports stable detection in industrial environments.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Performance in Adverse Conditions</strong>
+                <p>Signal processing remains comparatively stable in fog, external light, and complex reflective environments.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>1550 nm</strong>
+                <p>This eye-safe wavelength range enables higher optical power and robust signal processing in outdoor environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="pv-compare-card is-muted">
+            <h3 class="pv-compare-title is-muted-title">ToF LiDAR</h3>
+            <p class="pv-compare-sub">(Time of Flight)</p>
+
+            <div class="pv-compare-list">
+              <div class="pv-compare-item">
+                <strong>Pulsed Time-of-Flight</strong>
+                <p>Laser pulses are emitted and distance is calculated from the time required for the reflected light to return from an object.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Time-Based Distance Calculation</strong>
+                <p>Processing is primarily based on distance data and can be affected by environmental conditions.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>More Susceptible to Interference</strong>
+                <p>Performance may be affected by reflected-light frequencies or pulses from other LiDAR sensors.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Limitations in Long-Range Precision</strong>
+                <p>Maintaining precision over long distances can be difficult and performance may be affected by external conditions.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>Affected by Environmental Changes</strong>
+                <p>Fog, intense ambient light, and environments with many reflectors can introduce scattering and absorption.</p>
+              </div>
+
+              <div class="pv-compare-item">
+                <strong>905 nm</strong>
+                <p>Signal absorption and scattering may reduce performance under certain environmental conditions.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="pv-compare-footnote">Doppler effect: The apparent change in frequency and wavelength caused by relative motion between a wave source and an observer.<br>Coherent detection: A receiving method that recognizes a signal's unique self-interference pattern, enabling stable detection under ambient-light and interference conditions.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="pv-footer">
+    <div class="pv-footer-inner">
+      <div class="pv-footer-left">
+        <a href="index.html" class="pv-logo" aria-label="PRIVION Home">
+          <img src="assets/images/logo/privion-logo.png" alt="PRIVION" class="pv-logo-image">
+        </a>
+
+        <p class="pv-footer-info">Dongwon Industries Co., Ltd.<br>Web www.privionlidar.com<br>Tel +82-2-589-2312<br>Email privion-lidar@dongwon.com<br>Address Suite 604, 6F, Building B, Pangyo Innovalley, 621 Sampyeong-dong, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</p>
+      </div>
+
+      <div class="pv-footer-right">
+        <p class="pv-copy">Copyright © PRIVION. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/privion-common.js"></script>
+
+
+</body></html>
