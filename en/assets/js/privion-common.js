@@ -719,3 +719,38 @@ function syncV2(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(syncV2,0)});else setTimeout(syncV2,0);
 })();
+
+
+/* Global header search drawer (KR/EN), 2026-11-02 */
+(function(){
+ function init(){
+  var header=document.querySelector('.pv-header');
+  if(!header||header.querySelector('.pv-header-search-panel'))return;
+  var en=document.documentElement.lang.toLowerCase().startsWith('en');
+  var trigger=header.querySelector('.pv-header-icon[aria-label="Search"],.pv-header-icon[href*="search.html"]');
+  if(!trigger){
+   var right=header.querySelector('.pv-header-right');
+   if(!right)return;
+   trigger=document.createElement('button');
+   trigger.type='button';trigger.className='pv-header-icon pv-search-trigger';trigger.setAttribute('aria-label',en?'Open search':'검색 열기');
+   trigger.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke-width="1.8"></circle><path d="M16.5 16.5L21 21" stroke-width="1.8" stroke-linecap="round"></path></svg>';
+   right.appendChild(trigger);
+  }
+  trigger.setAttribute('aria-expanded','false');
+  trigger.setAttribute('aria-controls','pv-header-search-panel');
+  var panel=document.createElement('div');
+  panel.id='pv-header-search-panel';panel.className='pv-header-search-panel';panel.hidden=true;
+  panel.innerHTML='<form class="pv-header-search-form" action="search.html" method="get" role="search">'+
+   '<label for="pv-header-search-input">'+(en?'Search PRIVION':'프리비온 검색')+'</label>'+
+   '<div class="pv-header-search-line"><input id="pv-header-search-input" type="search" name="q" autocomplete="off" placeholder="'+(en?'Search products, technology, applications':'제품, 기술, 적용 분야를 검색하세요')+'" required>'+
+   '<button type="submit">'+(en?'Search':'검색')+'</button><button type="button" class="pv-header-search-close" aria-label="'+(en?'Close search':'검색 닫기')+'">×</button></div></form>';
+  header.appendChild(panel);
+  var input=panel.querySelector('input');
+  function setOpen(open){panel.hidden=!open;trigger.setAttribute('aria-expanded',String(open));if(open)input.focus();else trigger.focus();}
+  trigger.addEventListener('click',function(e){e.preventDefault();setOpen(panel.hidden);});
+  panel.querySelector('.pv-header-search-close').addEventListener('click',function(){setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)setOpen(false);});
+  document.addEventListener('pointerdown',function(e){if(!panel.hidden&&!panel.contains(e.target)&&!trigger.contains(e.target)){panel.hidden=true;trigger.setAttribute('aria-expanded','false');}});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
