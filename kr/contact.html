@@ -582,6 +582,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pv-contact-grid">
 
           <!-- CONTACT INFO -->
+          <div class="pv-contact-column"><p class="pv-contact-eyebrow">CONTACT PRIVION</p><h1 class="pv-contact-heading">기술과 현장을<br>연결합니다.</h1><p class="pv-contact-lead">제품 선정부터 기술 자료 및 데모 문의까지<br>프리비온에 편하게 문의해 주세요.</p>
           <div class="pv-contact-info">
             <div class="pv-contact-logo">
               <a href="index.html" class="pv-logo" aria-label="Privion Home">
@@ -685,52 +686,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
 
+          </div>
           <!-- MAP -->
           <div class="pv-map-area">
-            <div class="pv-map-box">
-              <div class="pv-kakao-map-card">
-                <a
-                  href="https://map.kakao.com/?urlX=522363.00000000274&urlY=1084450.0000000012&name=%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%82%BC%ED%8F%89%EB%8F%99%20621&map_type=TYPE_MAP&from=roughmap"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="카카오맵에서 프리비온 위치 보기"
-                  class="pv-kakao-map-image"
-                >
-                  <img
-                    src="https://t1.daumcdn.net/roughmap/imgmap/d3877334321916d00e65f5d6cef3b08b97910d279dbe9e994c723d5b8ba53744"
-                    alt="경기도 성남시 분당구 삼평동 621 판교이노밸리 제B동 6층 604-4호 지도"
-                  >
-                </a>
-
-                <div class="pv-kakao-map-footer">
-                  <a
-                    href="https://map.kakao.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="카카오맵 바로가기"
-                  >
-                    <img
-                      class="pv-kakao-map-logo"
-                      src="https://t1.kakaocdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"
-                      width="72"
-                      height="16"
-                      alt="카카오맵"
-                    >
-                  </a>
-
-                  <a
-                    class="pv-kakao-map-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://map.kakao.com/?from=roughmap&eName=%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%82%BC%ED%8F%89%EB%8F%99%20621&eX=522363.00000000274&eY=1084450.0000000012"
-                  >
-                    길찾기
-                  </a>
-                </div>
-              </div>
+            <div class="pv-map-box pv-live-map-box">
+              <div id="daumRoughmapContainer1793584915506" class="root_daum_roughmap root_daum_roughmap_landing" aria-label="프리비온 판교 연구소 위치 지도"></div>
             </div>
+            <p class="pv-map-caption">PRIVION R&D CENTER · PANGYO, SEONGNAM</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -799,6 +762,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
+  <script charset="UTF-8" src="https://t1.kakaocdn.net/kakaomapweb/roughmap/loader/prod/roughmapLoader.js"></script>
+<script charset="UTF-8">
+  if (window.daum && daum.roughmap) {
+    new daum.roughmap.Lander({timestamp:"1793584915506",key:"4biwkpwu4u9",mapWidth:"640",mapHeight:"360"}).render();
+  }
+</script>
   <script src="assets/js/privion-common.js"></script>
 </body>
 </html>
