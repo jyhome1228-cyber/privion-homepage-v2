@@ -2393,3 +2393,29 @@ html.pv-app-modal-open{overflow:hidden}
 @media(max-width:768px){
  .pv-home-hero-inner{padding-left:22px!important;padding-right:22px!important}
 }
+
+/* Contact / centered site navigation — 2026-11-02 */
+@media(min-width:1025px){
+ .pv-header-inner{display:grid!important;grid-template-columns:1fr auto 1fr!important}
+ .pv-header-inner>.pv-logo{justify-self:start}
+ .pv-header-inner>.pv-nav{justify-self:center}
+ .pv-header-right{justify-self:end}
+}
+.pv-contact-main{padding:112px 0 118px!important}
+.pv-contact-grid{grid-template-columns:minmax(310px,.82fr) minmax(0,1.5fr)!important;gap:clamp(52px,6vw,110px)!important;align-items:center!important}
+.pv-contact-column{min-width:0}
+.pv-contact-eyebrow{font-size:12px;font-weight:700;color:#29abe2;letter-spacing:.12em;margin-bottom:17px}
+.pv-contact-heading{font-size:clamp(32px,3vw,44px);font-weight:720;letter-spacing:-.06em;line-height:1.2;margin:0 0 19px}
+.pv-contact-lead{font-size:15px;line-height:1.8;color:#777;margin-bottom:46px}
+.pv-contact-logo{margin-bottom:30px!important}
+.pv-contact-logo .pv-logo-image{width:154px!important}
+.pv-contact-list{gap:19px!important;margin-bottom:34px!important}
+.pv-contact-item{font-size:15px!important;grid-template-columns:22px minmax(0,1fr)!important;gap:15px!important;align-items:center!important;line-height:1.7!important}
+.pv-contact-icon,.pv-contact-icon svg{width:18px!important;height:18px!important}
+.pv-contact-icon{margin-top:0!important}
+.pv-map-box.pv-live-map-box{aspect-ratio:auto!important;border-radius:8px!important;min-height:380px}
+.pv-live-map-box .root_daum_roughmap{width:100%!important;max-width:100%!important}
+.pv-live-map-box .root_daum_roughmap .wrap_map{width:100%!important}
+.pv-map-caption{font-size:11px;letter-spacing:.05em;color:#999;margin-top:14px}
+@media(max-width:1024px){.pv-contact-grid{grid-template-columns:1fr!important;gap:50px!important}.pv-contact-main{padding:84px 0!important}.pv-contact-column{max-width:720px}}
+@media(max-width:768px){.pv-contact-heading{font-size:32px}.pv-contact-lead{font-size:14px}.pv-contact-main{padding:64px 0 80px!important}.pv-map-box.pv-live-map-box{min-height:300px}}
