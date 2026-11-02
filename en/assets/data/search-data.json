@@ -1,0 +1,121 @@
+[
+  {
+    "title": "FMCW LiDAR Technology",
+    "category": "Technology",
+    "url": "technology.html",
+    "description": "Learn how PRIVION FMCW LiDAR is engineered for demanding industrial environments.",
+    "keywords": "fmcw lidar technology frequency modulated continuous wave industrial sensing"
+  },
+  {
+    "title": "FMCW and ToF Comparison",
+    "category": "Technology",
+    "url": "technology.html",
+    "description": "Compare FMCW and ToF LiDAR operating principles, velocity measurement, interference immunity, accuracy, and wavelength.",
+    "keywords": "tof comparison coherent doppler 1550nm 905nm interference accuracy"
+  },
+  {
+    "title": "DL Series Product Lineup",
+    "category": "Products",
+    "url": "product.html",
+    "description": "Explore the PRIVION DL Series product lineup, including DL100, DL100S, DL150, and DL150S.",
+    "keywords": "product lineup dl series dl100 dl100s dl150 dl150s"
+  },
+  {
+    "title": "LiDAR DL100",
+    "category": "Products",
+    "url": "product-dl100.html",
+    "description": "Compact industrial detection-type FMCW LiDAR for indoor automation and mobile-robot safety.",
+    "keywords": "dl100 detection compact industrial lidar indoor agv amr"
+  },
+  {
+    "title": "LiDAR DL100S",
+    "category": "Products",
+    "url": "product-dl100s.html",
+    "description": "Compact industrial detection and scanning FMCW LiDAR with point-cloud output for SLAM and spatial perception.",
+    "keywords": "dl100s scanning point cloud slam mapping industrial lidar"
+  },
+  {
+    "title": "LiDAR DL150",
+    "category": "Products",
+    "url": "product-dl150.html",
+    "description": "IP67 outdoor industrial detection-type FMCW LiDAR with a detection range of up to 20 meters.",
+    "keywords": "dl150 detection outdoor ip67 20m industrial lidar"
+  },
+  {
+    "title": "LiDAR DL150S",
+    "category": "Products",
+    "url": "product-dl150s.html",
+    "description": "IP67 outdoor detection and scanning FMCW LiDAR with point-cloud output for advanced outdoor systems.",
+    "keywords": "dl150s scanning outdoor point cloud ip67 localization lidar"
+  },
+  {
+    "title": "AMR / AGV",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "FMCW LiDAR sensing for autonomous mobile robots, AGVs, navigation, obstacle detection, and safety zones.",
+    "keywords": "amr agv autonomous mobile robot automation logistics navigation"
+  },
+  {
+    "title": "OHT",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "Precision sensing solutions for overhead transport systems and advanced manufacturing lines.",
+    "keywords": "oht overhead transport semiconductor manufacturing sensing"
+  },
+  {
+    "title": "Port Cranes",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "LiDAR sensing for port cranes, large structures, positioning, and obstacle detection.",
+    "keywords": "port cranes harbor crane large structure positioning"
+  },
+  {
+    "title": "Heavy Machinery",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "LiDAR sensing for construction, mining, civil engineering, operating zones, and obstacle detection.",
+    "keywords": "heavy machinery construction mining safety obstacle detection"
+  },
+  {
+    "title": "Smart City",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "LiDAR perception for people, vehicles, infrastructure, and complex urban environments.",
+    "keywords": "smart city urban infrastructure vehicle pedestrian perception"
+  },
+  {
+    "title": "Smart Farm",
+    "category": "Applications",
+    "url": "application.html",
+    "description": "LiDAR sensing for smart farms, agricultural machinery, and automated equipment.",
+    "keywords": "smart farm agriculture automation machinery sensing"
+  },
+  {
+    "title": "Contact PRIVION",
+    "category": "Contact",
+    "url": "contact.html",
+    "description": "Find PRIVION contact details, office location, map links, and product inquiry information.",
+    "keywords": "contact address phone email location map pangyo"
+  },
+  {
+    "title": "DL Series Catalog",
+    "category": "Downloads",
+    "url": "assets/download/privion-dl-series-catalog.pdf",
+    "description": "Download the PRIVION DL Series product and technology catalog.",
+    "keywords": "download catalog pdf brochure datasheet"
+  },
+  {
+    "title": "Terms of Use",
+    "category": "Policies",
+    "url": "terms.html",
+    "description": "Read the terms governing the use of the PRIVION website.",
+    "keywords": "terms terms of use policy website"
+  },
+  {
+    "title": "Privacy Policy",
+    "category": "Policies",
+    "url": "privacy.html",
+    "description": "Read the PRIVION website privacy policy.",
+    "keywords": "privacy policy personal information data protection"
+  }
+]
