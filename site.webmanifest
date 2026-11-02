@@ -1,0 +1,16 @@
+{
+  "name": "PRIVION",
+  "short_name": "PRIVION",
+  "start_url": "./kr/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
