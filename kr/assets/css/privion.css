@@ -2285,3 +2285,25 @@ html.pv-app-modal-open{overflow:hidden}
  .pv-tech-row{grid-template-columns:1fr!important;gap:17px!important;padding:34px 0!important}
  .pv-tech-row-text{font-size:14px!important}
 }
+
+/* 2026-11-02 technology features: three columns; section breathing room */
+.pv-tech-visual{margin-bottom:96px!important}
+.pv-tech-main .pv-tech-row{display:inline-flex!important;vertical-align:top!important;flex-direction:column!important;gap:24px!important;width:calc((100% - 40px)/3)!important;min-height:265px!important;padding:34px 30px!important;margin:0 20px 0 0!important;border:1px solid #eceef0!important;border-radius:8px!important;background:#f7f8f9!important}
+.pv-tech-main .pv-tech-row:nth-of-type(4){margin-right:0!important}
+.pv-tech-row-heading{gap:12px!important;align-items:baseline!important}
+.pv-tech-row-title{font-size:21px!important}
+.pv-tech-row-text{font-size:14px!important;line-height:1.8!important}
+.pv-tech-main .pv-tech-row + .pv-tech-row{margin-top:0!important}
+.pv-tech-banner{margin-top:110px!important}
+.pv-home-products{margin-bottom:0!important}
+.pv-home-systems{padding-top:92px!important;padding-bottom:112px!important}
+@media(max-width:1100px){
+ .pv-tech-main .pv-tech-row{width:calc((100% - 20px)/2)!important;margin-bottom:20px!important}
+ .pv-tech-main .pv-tech-row:nth-of-type(3){margin-right:0!important}
+}
+@media(max-width:768px){
+ .pv-tech-visual{margin-bottom:54px!important}
+ .pv-tech-main .pv-tech-row{display:flex!important;width:100%!important;min-height:0!important;margin:0 0 14px!important;padding:28px 24px!important}
+ .pv-tech-banner{margin-top:65px!important}
+ .pv-home-systems{padding-top:72px!important;padding-bottom:82px!important}
+}
