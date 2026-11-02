@@ -2148,3 +2148,44 @@ body {
   .pv-compare-title { font-size: 29px !important; }
   .pv-footer-inner { padding-left: 28px !important; padding-right: 28px !important; }
 }
+
+/* PRIVION V2 — 2026-11-02 UI polish (KR only) */
+.pv-header { height: 76px !important; }
+.pv-header-inner { grid-template-columns: 180px minmax(0,1fr) 150px !important; }
+.pv-nav { gap: clamp(8px,1.1vw,18px) !important; }
+.pv-nav > a, .pv-nav-item > a { padding: 13px 13px !important; }
+.pv-home-hero-title { font-size: clamp(54px,5.35vw,83px) !important; line-height: 1.04 !important; }
+.pv-tech-title { font-size: clamp(32px,2.8vw,40px) !important; }
+.pv-application-title,.pv-page-title { font-size: clamp(26px,2.15vw,34px) !important; }
+.pv-home-intro-title { font-size: clamp(29px,2.4vw,36px) !important; }
+.pv-home-feature-title { font-size: clamp(24px,2.1vw,30px) !important; }
+.pv-policy-title,.pv-search-title { font-size: clamp(31px,2.7vw,40px) !important; }
+.pv-home-rolling { border-bottom: 0 !important; padding-bottom: 0 !important; }
+.pv-home-app-card { width: 340px !important; }
+.pv-home-app-img { aspect-ratio: 1.48 / 1 !important; border-radius: 6px !important; }
+.pv-home-rolling-track { gap: 20px !important; }
+.pv-footer { background:#050505 !important; }
+.pv-footer-inner {
+  width:100% !important; max-width:1440px !important;
+  margin:0 auto !important; min-height:225px !important;
+  padding:56px 48px 48px !important;
+  display:flex !important; flex-direction:row !important;
+  align-items:flex-start !important; justify-content:space-between !important;
+  gap:48px !important;
+}
+.pv-footer .pv-logo-image,.pv-footer .pv-logo img {
+  width:152px !important; filter: brightness(0) invert(1) !important;
+}
+.pv-footer-info { color:rgba(255,255,255,.74) !important; font-size:13px !important; line-height:1.9 !important; margin-top:18px !important; }
+.pv-footer-right { align-self:stretch !important; min-height:auto !important; display:flex !important; flex-direction:column !important; justify-content:flex-end !important; align-items:flex-end !important; }
+.pv-copy { color:rgba(255,255,255,.50) !important; font-size:12px !important; white-space:nowrap; }
+@media(max-width:768px){
+  .pv-header {height:66px !important;}
+  .pv-home-hero-title {font-size:clamp(44px,10vw,60px) !important;}
+  .pv-home-intro-title {font-size:clamp(25px,5.5vw,30px) !important;}
+  .pv-tech-title {font-size:32px !important;}
+  .pv-home-app-card {width:282px !important;}
+  .pv-footer-inner {padding:42px 24px !important;min-height:0 !important;flex-direction:column !important;gap:32px !important;}
+  .pv-footer-right {align-items:flex-start !important;}
+  .pv-copy {white-space:normal;}
+}
