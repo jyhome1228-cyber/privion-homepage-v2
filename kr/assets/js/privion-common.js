@@ -285,3 +285,21 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
 })();
+
+
+/* Consistent brand descriptor directly below footer logo */
+(function(){
+ function mountFooterDescriptor(){
+  document.querySelectorAll('.pv-footer-left').forEach(function(column){
+   if(column.querySelector('.pv-footer-brandline'))return;
+   var logo=column.querySelector('.pv-logo');
+   if(!logo)return;
+   var line=document.createElement('p');
+   line.className='pv-footer-brandline';
+   line.textContent='산업 현장을 위한 국산 FMCW LiDAR 솔루션, PRIVION';
+   logo.insertAdjacentElement('afterend',line);
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountFooterDescriptor);
+ else mountFooterDescriptor();
+})();
