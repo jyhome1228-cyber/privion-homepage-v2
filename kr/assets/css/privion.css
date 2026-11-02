@@ -2347,3 +2347,31 @@ html.pv-app-modal-open{overflow:hidden}
     padding-right: 32px !important;
   }
 }
+
+
+/* 2026-11-02 finishing pass: clean technology cards, sitemap, motion */
+.pv-tech-feature-grid .pv-tech-row{background:transparent!important;border:0!important;border-top:1px solid #dedede!important;border-radius:0!important;padding:28px 14px 28px 0!important;min-height:230px!important}
+.pv-tech-feature-grid .pv-tech-row-title{font-size:20px!important}
+.pv-home-hero-copy{width:min(52%,650px)!important;max-width:650px!important;min-width:0}
+.pv-home-hero-title{font-size:clamp(48px,5.1vw,80px)!important;max-width:100%;overflow-wrap:normal;white-space:normal;line-height:1.06!important}
+.pv-home-hero-lead,.pv-home-hero-sub{max-width:100%;overflow-wrap:break-word}
+.pv-footer-inner{gap:50px!important}
+.pv-footer-sitemap{display:grid;grid-template-columns:repeat(2,minmax(125px,1fr));gap:18px 42px;align-content:start;min-width:320px;margin:0 0 22px}
+.pv-footer-sitemap a{font-size:13px;color:rgba(255,255,255,.72);transition:color .2s ease}
+.pv-footer-sitemap a:hover{color:#fff}
+.pv-footer-right{justify-content:space-between!important}
+.pv-reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){
+ html.pv-motion-ready .pv-reveal:not(.is-visible){opacity:0;transform:translateY(18px)}
+ html.pv-motion-ready .pv-reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.3,1)}
+}
+@media(max-width:1024px){.pv-footer-sitemap{min-width:0}.pv-home-hero-copy{width:58%!important}}
+@media(max-width:768px){
+ .pv-home-hero-copy{width:80%!important}
+ .pv-home-hero-title{font-size:clamp(42px,10vw,60px)!important}
+ .pv-home-hero-lead{font-size:15px!important}
+ .pv-footer-sitemap{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 25px;width:100%}
+ .pv-footer-right{align-items:flex-start!important}
+ .pv-tech-feature-grid .pv-tech-row{min-height:0!important;padding:26px 0!important}
+}
+@media(max-width:420px){.pv-home-hero-copy{width:92%!important}.pv-home-hero-title{font-size:42px!important}}
