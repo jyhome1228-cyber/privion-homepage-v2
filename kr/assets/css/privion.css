@@ -2375,3 +2375,21 @@ html.pv-app-modal-open{overflow:hidden}
  .pv-tech-feature-grid .pv-tech-row{min-height:0!important;padding:26px 0!important}
 }
 @media(max-width:420px){.pv-home-hero-copy{width:92%!important}.pv-home-hero-title{font-size:42px!important}}
+
+/* Align homepage hero copy with shared 1440px / 32px content grid */
+@media (min-width:1025px){
+ .pv-home-hero-inner{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:1440px!important;
+  margin:0 auto!important;
+  padding-left:32px!important;
+  padding-right:32px!important;
+ }
+}
+@media (min-width:769px) and (max-width:1024px){
+ .pv-home-hero-inner{padding-left:32px!important;padding-right:32px!important}
+}
+@media(max-width:768px){
+ .pv-home-hero-inner{padding-left:22px!important;padding-right:22px!important}
+}
