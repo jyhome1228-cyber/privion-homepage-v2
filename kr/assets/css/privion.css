@@ -2189,3 +2189,26 @@ body {
   .pv-footer-right {align-items:flex-start !important;}
   .pv-copy {white-space:normal;}
 }
+
+/* 2026-11-02 Industrial Applications: 3 cards + details modal */
+.pv-home-rolling{border-bottom:0!important;padding-bottom:0!important}
+.pv-home-rolling::before,.pv-home-rolling::after{width:36px!important}
+.pv-home-rolling-track{gap:20px!important;animation-duration:48s!important}
+.pv-home-app-card{width:calc((min(100vw - 96px, 1344px) - 40px)/3)!important;cursor:pointer}
+.pv-home-app-img{aspect-ratio:1.55/1!important}
+.pv-home-app-card:focus-visible{outline:2px solid #29abe2;outline-offset:4px}
+.pv-app-modal{display:none;position:fixed;inset:0;z-index:2500;align-items:center;justify-content:center;padding:24px}
+.pv-app-modal[aria-hidden="false"]{display:flex}
+.pv-app-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.62)}
+.pv-app-modal-panel{position:relative;width:min(850px,100%);max-height:min(90vh,900px);overflow:auto;background:white;border-radius:10px;box-shadow:0 28px 80px rgba(0,0,0,.26)}
+.pv-app-modal-close{position:absolute;z-index:2;top:15px;right:18px;background:rgba(255,255,255,.96);border:0;border-radius:50%;width:38px;height:38px;font-size:28px;cursor:pointer}
+.pv-app-modal-image{aspect-ratio:2.15/1;overflow:hidden;background:#f4f5f6}
+.pv-app-modal-image img{width:100%;height:100%;object-fit:cover}
+.pv-app-modal-copy{padding:35px 42px 42px}
+.pv-app-modal-eyebrow{font-size:12px;font-weight:700;color:#29abe2;letter-spacing:.04em;margin-bottom:10px}
+.pv-app-modal-copy h3{font-size:clamp(23px,2.5vw,30px);line-height:1.2;margin-bottom:19px}
+.pv-app-modal-copy>p:not(.pv-app-modal-eyebrow){font-size:15px;line-height:1.85;color:#555;word-break:keep-all}
+.pv-app-modal-link{display:inline-block;margin-top:26px;border-bottom:1px solid #111;padding-bottom:5px;font-size:14px;font-weight:650}
+html.pv-app-modal-open{overflow:hidden}
+@media(max-width:1024px){.pv-home-app-card{width:calc((100vw - 64px - 20px)/2)!important}}
+@media(max-width:768px){.pv-home-app-card{width:min(82vw,360px)!important}.pv-app-modal{padding:16px}.pv-app-modal-copy{padding:26px 24px 30px}.pv-app-modal-image{aspect-ratio:1.6/1}}
