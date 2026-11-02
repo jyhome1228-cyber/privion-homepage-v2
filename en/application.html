@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en"><head>
+  <!-- =========================================================
+    PRIVION APPLICATION PAGE
+    적용 분야 페이지입니다.
+    이미지 경로는 assets/images/logo/ 기준입니다.
+  ========================================================= -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Industrial Applications | PRIVION FMCW LiDAR</title>
+
+  <meta name="description" content="Explore PRIVION FMCW LiDAR applications across AMR and AGV, OHT, port cranes, smart farms, heavy machinery, and smart cities.">
+
+  <meta name="keywords" content="PRIVION, FMCW LiDAR, industrial LiDAR, LiDAR sensor, automation, robotics, AGV, AMR">
+
+  <meta name="author" content="PRIVION">
+  <meta name="contact" content="privion-lidar@dongwon.com">
+  <meta name="telephone" content="+82-2-589-2312">
+
+  <!-- Naver Site Verification -->
+  <meta name="naver-site-verification" content="7a2d3bdc939d1acfb9933c8ee472e83bf4a1f71d">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Industrial Applications | PRIVION FMCW LiDAR">
+  <meta property="og:description" content="Explore PRIVION FMCW LiDAR applications across AMR and AGV, OHT, port cranes, smart farms, heavy machinery, and smart cities.">
+  <meta property="og:url" content="https://www.privionlidar.com/application.html">
+  <meta property="og:image" content="https://www.privionlidar.com/assets/images/logo/application-hero.png">
+  <meta property="og:site_name" content="PRIVION">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industrial Applications | PRIVION FMCW LiDAR">
+  <meta name="twitter:description" content="Explore PRIVION FMCW LiDAR applications across AMR and AGV, OHT, port cranes, smart farms, heavy machinery, and smart cities.">
+  <meta name="twitter:image" content="https://www.privionlidar.com/assets/images/logo/application-hero.png">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="assets/css/privion.css">
+
+  <style>
+    /* =========================================================
+       APPLICATION PAGE LOCAL STYLE
+    ========================================================= */
+
+    .pv-application-main {
+      padding: 132px 0 0;
+    }
+
+    .pv-application-head {
+      margin-bottom: 72px;
+    }
+
+    .pv-application-title {
+      margin: 0 0 40px;
+      color: #000;
+      font-size: clamp(30px, 2.7vw, 45px);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.065em;
+    }
+
+    .pv-application-desc {
+      max-width: 900px;
+      margin: 0;
+      color: #777;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.82;
+      letter-spacing: -0.035em;
+    }
+
+    .pv-application-visual {
+      width: 100%;
+      margin-bottom: 72px;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #f3f4f5;
+    }
+
+    .pv-application-visual img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pv-application-list {
+      width: 100%;
+    }
+
+    .pv-application-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 78px;
+      align-items: center;
+      padding: 56px 0;
+      border-bottom: 1px solid #dedede;
+    }
+
+    .pv-application-item:first-child {
+      padding-top: 0;
+    }
+
+    .pv-application-item-title {
+      margin: 0 0 28px;
+      color: #000;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.055em;
+    }
+
+    .pv-application-item-desc {
+      margin: 0;
+      color: #777;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.78;
+      letter-spacing: -0.035em;
+    }
+
+    .pv-application-item-image {
+      width: 100%;
+      aspect-ratio: 1.65 / 1;
+      overflow: hidden;
+      background: #f3f4f5;
+      border-radius: 4px;
+    }
+
+    .pv-application-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .pv-application-item:hover .pv-application-item-image img {
+      transform: scale(1.035);
+    }
+
+    .pv-download {
+      width: 100%;
+      margin-top: 92px;
+      padding: 88px 0;
+      background: #f3f4f5;
+    }
+
+    .pv-download-inner {
+      width: 100%;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .pv-download-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pv-download-image img {
+      width: min(100%, 420px);
+    }
+
+    .pv-download-title {
+      margin: 0 0 34px;
+      color: #000;
+      font-size: clamp(28px, 2.25vw, 40px);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.06em;
+    }
+
+    .pv-download-desc {
+      max-width: 560px;
+      margin: 0 0 44px;
+      color: #777;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.82;
+      letter-spacing: -0.035em;
+    }
+
+    /* =========================================================
+       FOOTER COMMON OVERRIDE
+       검정 배경 전체폭 적용
+    ========================================================= */
+
+    .pv-footer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    .pv-footer-inner {
+      width: 100%;
+      max-width: none;
+      min-height: auto;
+      margin: 0;
+      padding: 58px max(84px, calc((100vw - 1280px) / 2 + 64px));
+      background: #000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 60px;
+      box-sizing: border-box;
+    }
+
+    .pv-footer-info {
+      margin-top: 24px;
+      line-height: 1.72;
+    }
+
+    .pv-footer-links {
+      display: none;
+    }
+
+    .pv-footer-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      min-height: 120px;
+    }
+
+    .pv-copy {
+      margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .pv-application-main {
+        padding-top: 110px;
+      }
+
+      .pv-application-item,
+      .pv-download-inner {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .pv-download-image {
+        justify-content: flex-start;
+      }
+
+      .pv-footer-inner {
+        padding: 52px 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pv-application-main {
+        padding-top: 82px;
+      }
+
+      .pv-application-head {
+        margin-bottom: 46px;
+      }
+
+      .pv-application-title {
+        margin-bottom: 28px;
+        font-size: 28px;
+      }
+
+      .pv-application-desc {
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .pv-application-visual {
+        margin-bottom: 52px;
+      }
+
+      .pv-application-item {
+        padding: 42px 0;
+        gap: 26px;
+      }
+
+      .pv-application-item-title {
+        margin-bottom: 18px;
+        font-size: 23px;
+      }
+
+      .pv-application-item-desc {
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .pv-application-item-image {
+        aspect-ratio: 1.45 / 1;
+      }
+
+      .pv-download {
+        margin-top: 62px;
+        padding: 68px 0;
+      }
+
+      .pv-download-inner {
+        gap: 34px;
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pv-download-image img {
+        width: min(100%, 340px);
+      }
+
+      .pv-download-title {
+        margin-bottom: 24px;
+        font-size: 26px;
+      }
+
+      .pv-download-desc {
+        margin-bottom: 32px;
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .pv-footer-inner {
+        padding: 44px 28px;
+        flex-direction: column;
+        gap: 34px;
+      }
+
+      .pv-footer-right {
+        min-height: auto;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pv-application-title {
+        font-size: 25px;
+      }
+
+      .pv-application-item-title {
+        font-size: 21px;
+      }
+
+      .pv-download-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+
+<link rel="stylesheet" href="assets/css/privion-en.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="pv-header">
+    <div class="pv-header-inner">
+      <a href="index.html" class="pv-logo" aria-label="PRIVION Home">
+        <img src="assets/images/logo/privion-logo.png" alt="PRIVION" class="pv-logo-image">
+      </a>
+
+      <nav class="pv-nav" aria-label="Main Navigation">
+        <a href="technology.html">Technology</a>
+        <a href="product.html">Products</a>
+        <a href="application.html" class="is-active">Applications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="pv-header-right">
+        <a href="search.html" class="pv-header-icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke-width="1.8"></circle>
+            <path d="M16.5 16.5L21 21" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="pv-application-main">
+    <div class="pv-container">
+
+      <!-- PAGE HEAD -->
+      <section class="pv-application-head">
+        <h1 class="pv-application-title">Industrial FMCW LiDAR Solutions<br>for Diverse Applications</h1>
+
+        <p class="pv-application-desc">PRIVION LiDAR products are engineered around the structural and operational requirements of real industrial applications.<br>Advanced FMCW sensing provides accurate distance and velocity data for complex automation environments across indoor and outdoor conditions.<br><br>From AMR-based automation and material-handling systems to agricultural, construction, and urban infrastructure, each solution is designed around the functions and usability required in the field.</p>
+      </section>
+
+      <!-- TOP VISUAL -->
+      <section class="pv-application-visual">
+        <img src="assets/images/logo/application-hero.png" alt="DL Series FMCW LiDAR application">
+      </section>
+
+      <!-- APPLICATION LIST -->
+      <section class="pv-application-list">
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">AMR / AGV</h2>
+            <p class="pv-application-item-desc">Supports stable autonomous navigation for AMRs and AGVs. In indoor industrial environments and SLAM-based navigation systems, it provides precise perception for both mobility and operational safety.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/amr-agv.png" alt="AMR / AGV">
+          </div>
+        </article>
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">OHT</h2>
+            <p class="pv-application-item-desc">Provides reliable sensing for overhead transport systems in precision manufacturing environments. Fine positional differences can be detected to support stable OHT operation.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/oht.png" alt="OHT">
+          </div>
+        </article>
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">Port Cranes</h2>
+            <p class="pv-application-item-desc">Provides precise sensing around port cranes and large structures, enabling stable recognition of surrounding structures and crane positions even in outdoor environments with multiple reflectors.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/port-cranes.png" alt="Port Cranes">
+          </div>
+        </article>
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">Smart Farm</h2>
+            <p class="pv-application-item-desc">Delivers stable sensing data for agricultural machinery and automated equipment in environments with elevation changes, vegetation, and complex reflective conditions.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/smart-farm.png" alt="Smart Farm">
+          </div>
+        </article>
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">Heavy Machinery</h2>
+            <p class="pv-application-item-desc">Detects surrounding obstacles and operating zones in demanding mining, construction, and civil-engineering environments, supporting both operator safety and automated equipment operation.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/heavy-machinery.png" alt="Heavy Machinery">
+          </div>
+        </article>
+
+        <article class="pv-application-item">
+          <div class="pv-application-item-text">
+            <h2 class="pv-application-item-title">Smart City</h2>
+            <p class="pv-application-item-desc">Recognizes people, vehicles, and infrastructure within complex urban environments and supports precision sensing systems for smart-city infrastructure.</p>
+          </div>
+
+          <div class="pv-application-item-image">
+            <img src="assets/images/logo/smart-city.png" alt="Smart City">
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
+    <!-- DOWNLOAD -->
+    <section class="pv-download">
+      <div class="pv-download-inner">
+        <div class="pv-download-image">
+          <img src="assets/images/logo/catalog-cover.png" alt="Privion DL Series Catalog">
+        </div>
+
+        <div class="pv-download-content">
+          <h2 class="pv-download-title">Precision Sensing Solutions for Industrial Environments</h2>
+
+          <p class="pv-download-desc">Explore PRIVION technology and the complete DL Series product lineup in one document.<br><br>The catalog covers detection stability, precision sensing performance, major applications, and product features developed for real industrial environments.</p>
+
+          <a href="assets/download/privion-dl-series-catalog.pdf" class="pv-btn pv-btn-black" download="">
+            Download
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="pv-footer">
+    <div class="pv-footer-inner">
+      <div class="pv-footer-left">
+        <a href="index.html" class="pv-logo" aria-label="PRIVION Home">
+          <img src="assets/images/logo/privion-logo.png" alt="PRIVION" class="pv-logo-image">
+        </a>
+
+        <p class="pv-footer-info">Dongwon Industries Co., Ltd.<br>Web www.privionlidar.com<br>Tel +82-2-589-2312<br>Email privion-lidar@dongwon.com<br>Address Suite 604, 6F, Building B, Pangyo Innovalley, 621 Sampyeong-dong, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</p>
+      </div>
+
+      <div class="pv-footer-right">
+        <p class="pv-copy">Copyright © PRIVION. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/privion-common.js"></script>
+
+
+</body></html>
