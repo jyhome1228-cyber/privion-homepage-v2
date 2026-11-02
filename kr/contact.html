@@ -765,7 +765,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script charset="UTF-8" src="https://t1.kakaocdn.net/kakaomapweb/roughmap/loader/prod/roughmapLoader.js"></script>
 <script charset="UTF-8">
   if (window.daum && daum.roughmap) {
-    new daum.roughmap.Lander({timestamp:"1793584915506",key:"4biwkpwu4u9",mapWidth:"640",mapHeight:"360"}).render();
+    var width = Math.max(300, Math.round(document.querySelector(".pv-live-map-box").getBoundingClientRect().width));
+    new daum.roughmap.Lander({timestamp:"1793584915506",key:"4biwkpwu4u9",mapWidth:String(width),mapHeight:"410"}).render();
   }
 </script>
   <script src="assets/js/privion-common.js"></script>
