@@ -2224,3 +2224,19 @@ html.pv-app-modal-open{overflow:hidden}
   font-weight: 400 !important;
   text-align: center !important;
 }
+
+/* 2026-11-02 Header navigation refinement */
+.pv-nav > a,.pv-nav-item > a{background:transparent!important;border-radius:0!important;transition:color .2s ease!important}
+.pv-nav > a:hover,.pv-nav-item:hover > a,.pv-nav-item:focus-within > a{background:transparent!important;color:#29abe2!important}
+.pv-nav > a::after,.pv-nav-item > a::after{display:none!important}
+.pv-nav-sub-inner{display:flex!important;flex-direction:column!important;width:340px!important;padding:18px 22px!important;gap:18px!important;border-radius:10px!important;box-shadow:0 12px 32px rgba(0,0,0,.10)!important}
+.pv-nav-sub-group{gap:0!important}
+.pv-nav-sub-group+.pv-nav-sub-group{margin:0!important;padding:16px 0 0!important;border-left:0!important;border-top:1px solid #e7e7e7!important}
+.pv-nav-sub-heading{padding:0 0 8px!important;margin:0!important;font-size:13px!important;font-weight:700!important;color:#888!important}
+.pv-nav .pv-nav-sub a{background:transparent!important;border-radius:0!important;padding:11px 0!important;transition:color .2s ease!important}
+.pv-nav .pv-nav-sub a:hover{background:transparent!important}
+.pv-nav-sub-link:hover .pv-nav-sub-name{color:#29abe2!important}
+.pv-nav-sub-link+.pv-nav-sub-link{border-top:1px solid #f0f0f0!important}
+.pv-nav-sub-name{font-size:15px!important}
+.pv-nav-sub-desc{font-size:12px!important;color:#888!important}
+@media(max-width:1024px){.pv-nav-sub-inner{width:310px!important}}
