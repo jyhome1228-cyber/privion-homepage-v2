@@ -656,3 +656,66 @@ function wireEnglish(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wireEnglish);else wireEnglish();
 })();
+
+/* V2 English UI parity: apply translations after existing page-localization routines */
+(function(){
+function set(selector,value){var e=document.querySelector(selector);if(e)e.textContent=value;}
+function all(selector,values){document.querySelectorAll(selector).forEach(function(e,i){if(values[i])e.textContent=values[i];});}
+function syncV2(){
+ var page=location.pathname.split('/').pop();
+ document.documentElement.lang='en';
+ set('.pv-lang-cur','EN');
+ set('.pv-home-feature-title','Reliable sensing performance in complex industrial environments');
+ all('.pv-home-feature-box h3',['Stable detection in changing conditions','Distance and velocity in one sensor','Designed for industrial automation']);
+ all('.pv-home-feature-box p',[
+  'Engineered to support stable sensing in demanding conditions, including rain, intense sunlight and airborne dust.',
+  'FMCW signal analysis provides distance and velocity data for mobile equipment monitoring and control.',
+  'Designed for integration into AGVs, AMRs, cranes and other industrial automation systems.'
+ ]);
+ all('.pv-home-feature-box .pv-feature-index',['01 / RELIABILITY','02 / PRECISION','03 / INTEGRATION']);
+ set('.pv-contact-heading','Connecting technology with real-world operations.');
+ set('.pv-contact-lead','Contact PRIVION for product selection, technical documentation and demonstration requests.');
+ if(page==='product-dl100fl.html'){
+   set('.pv-product-sub','FMCW LiDAR, AI cameras and control for forklift safety');
+   set('.pv-product-desc','DL100FL combines an FMCW LiDAR sensor for detecting rear obstacles with four AI cameras for recognizing workers around the forklift. Configurable detection zones trigger staged warnings, automatic deceleration and stopping to help reduce collision risks.');
+   all('.pv-fl-title',['How It Works','Why FMCW LiDAR','Easy to Adopt','System']);
+   all('.pv-fl-lead',[
+    'The system supports staged warning, deceleration and stopping with configurable detection zones.',
+    'FMCW sensing is engineered for demanding industrial conditions.',
+    'Designed for installation on existing forklifts without extensive modification.',
+    'One FMCW LiDAR sensor and four AI cameras monitor the forklift surroundings.'
+   ]);
+   all('.pv-fl-box-title',[
+    'Detection','Warning & Deceleration','Stop',
+    'Dust and Smoke','Strong Sunlight','Reflective and Dark Surfaces','Multiple Sensors',
+    'Compatible with Forklifts','Efficient Installation','Transferable Equipment'
+   ]);
+   all('.pv-fl-box-desc',[
+    'The LiDAR detects rear obstacles while AI cameras recognize nearby workers.',
+    'Audible and visual alerts are followed by automatic speed reduction.',
+    'The forklift is brought to a controlled stop in a configured danger zone.',
+    'Coherent detection helps reduce false detections in dusty or smoky environments.',
+    'Designed to resist interference from intense ambient light.',
+    'Supports sensing across materials with different reflection characteristics.',
+    'Designed to reduce interference between multiple sensors operating nearby.',
+    'Can be installed on a range of existing forklift models.',
+    'Bracket mounting helps reduce equipment downtime.',
+    'The system can be removed and reinstalled on another forklift.'
+   ]);
+   set('.pv-fl-note','*This is a supplementary collision-risk reduction system and does not replace certified safety sensors or safety control systems.');
+   all('.pv-fl-sys-name',['FMCW LiDAR (DL100)','Four AI Cameras','Main Control Unit','Four-View Monitor','Audible and Visual Alarms']);
+   all('.pv-fl-sys-desc',['Rear obstacle detection','Person recognition on four sides','Deceleration and stop control','Real-time view and event recording','Alerts for surrounding workers']);
+   set('.pv-section-head .pv-section-title','Industrial Applications');
+   set('.pv-section-head .pv-section-desc','DL100FL supports forklift safety in warehouses and industrial facilities through obstacle detection, pedestrian recognition and staged vehicle control.');
+   set('.pv-catalog-title','FMCW LiDAR Forklift Safety System');
+   set('.pv-catalog-desc','Learn about the DL100FL system architecture, sensing technology, control process and application scenarios.');
+   set('.pv-other-section .pv-section-title','Other Products');
+   var specLabels=['System components','LiDAR model','LiDAR measurement','LiDAR wavelength','Horizontal field of view','Detection range','LiDAR location','AI cameras','Camera field of view','Monitor','Video recording','Alarm devices','Control sequence','Settings','Compatible vehicles','Installation','Relocation'];
+   all('.pv-spec-table th',specLabels);
+ }
+ document.querySelectorAll('.pv-footer-info').forEach(function(e){
+  e.innerHTML='Dongwon Industries Co., Ltd.<br>Web www.privionlidar.com<br>Tel +82-2-589-2312<br>Email privion-lidar@dongwon.com<br>Head Office: 68 Mabang-ro, Seocho-gu, Seoul<br>R&D Center: Pangyo Innovalley, Bundang-gu, Seongnam';
+ });
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(syncV2,0)});else setTimeout(syncV2,0);
+})();
