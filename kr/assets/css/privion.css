@@ -2478,3 +2478,28 @@ html.pv-app-modal-open{overflow:hidden}
   .pv-header-inner > .pv-nav { grid-template-columns: repeat(4, 90px) !important; gap: 4px !important; }
   .pv-nav > a,.pv-nav > .pv-nav-item { width: 90px !important; }
 }
+
+
+/* 2026-11-02 tablet detail + home advantages + footer positioning */
+.pv-home-feature-heading{margin-bottom:42px!important}
+.pv-home-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important}
+.pv-home-feature-grid .pv-home-feature-box{background:#fff!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;min-height:270px!important;height:auto!important;padding:34px 32px!important;text-align:left!important}
+.pv-home-feature-grid .pv-feature-index{display:block!important;font-size:12px!important;color:#29abe2!important;margin-bottom:28px!important}
+.pv-home-feature-grid .pv-home-feature-box h3{display:block!important;font-size:21px!important;line-height:1.35!important;margin-bottom:16px!important}
+.pv-home-feature-grid .pv-home-feature-box p{display:block!important;color:#666!important;font-size:14px!important;line-height:1.75!important}
+.pv-footer-brandline{color:rgba(255,255,255,.87);font-size:14px;font-weight:500;line-height:1.65;letter-spacing:-.025em;margin:5px 0 20px;max-width:420px}
+@media (min-width:769px) and (max-width:1100px){
+ .pv-detail-main .pv-product-hero{display:grid!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;align-items:center!important;gap:clamp(25px,3.5vw,44px)!important}
+ .pv-detail-main .pv-product-hero-image{width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;aspect-ratio:1/1!important}
+ .pv-detail-main .pv-product-hero-text{min-width:0!important}
+ .pv-detail-main .pv-product-hero-text .pv-product-name{font-size:clamp(27px,3.2vw,35px)!important;overflow-wrap:anywhere}
+ .pv-detail-main .pv-product-hero-text .pv-product-sub{font-size:clamp(15px,1.75vw,18px)!important}
+ .pv-detail-main .pv-product-hero-text .pv-product-desc{font-size:14px!important;line-height:1.7!important}
+ .pv-home-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .pv-home-feature-grid .pv-home-feature-box{padding:26px 20px!important;min-height:300px!important}
+}
+@media(max-width:768px){
+ .pv-home-feature-grid{grid-template-columns:1fr!important}
+ .pv-home-feature-grid .pv-home-feature-box{min-height:0!important;padding:28px 24px!important}
+ .pv-footer-brandline{font-size:13px;margin-bottom:18px}
+}
