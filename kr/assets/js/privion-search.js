@@ -1,115 +1,62 @@
-/* =========================================================
-   PRIVION SEARCH JS
-   - 정적 JSON 데이터 기반 사이트 내부 검색
-   - assets/data/search-data.json 사용
-========================================================= */
-
+/* PRIVION site search — case-insensitive, URL query and async data-safe */
 (function () {
   "use strict";
-
-  var input = document.getElementById("pv-search-input");
-  var resultBox = document.getElementById("pv-search-results");
-
-  if (!input || !resultBox) return;
-
-  var searchData = [];
-
-  /**
-   * 검색 데이터 불러오기
-   */
-  fetch("assets/data/search-data.json")
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Search data load failed");
-      }
-
-      return response.json();
-    })
-    .then(function (data) {
-      searchData = data;
-    })
-    .catch(function () {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">검색 데이터를 불러오지 못했습니다.</p>';
-    });
-
-  /**
-   * 검색어 정규화
-   */
-  function normalizeText(text) {
-    return String(text || "")
-      .toLowerCase()
-      .replace(/\s+/g, "");
-  }
-
-  /**
-   * 검색 결과 카드 생성
-   */
-  function createResultItem(item) {
-    return (
-      '<a href="' +
-      item.url +
-      '" class="pv-search-result">' +
-      "<span>" +
-      item.category +
-      "</span>" +
-      "<strong>" +
-      item.title +
-      "</strong>" +
-      "<p>" +
-      item.description +
-      "</p>" +
-      "</a>"
-    );
-  }
-
-  /**
-   * 검색 실행
-   */
-  function runSearch(keyword) {
-    var normalizedKeyword = normalizeText(keyword);
-
-    if (!normalizedKeyword) {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">검색어를 입력하면 관련 페이지가 표시됩니다.</p>';
-      return;
+  function init() {
+    var input = document.getElementById("pv-search-input");
+    var box = document.getElementById("pv-search-results");
+    if (!input || !box) return;
+    var items = [];
+    var loaded = false;
+    var dictionary = {"prompt":"검색어를 입력하면 관련 페이지가 표시됩니다.","none":"검색 결과가 없습니다.","error":"검색 데이터를 불러오지 못했습니다.","loading":"검색 데이터를 불러오는 중입니다."};
+    function normalize(value) {
+      return String(value == null ? "" : value)
+        .normalize("NFKC").toLocaleLowerCase()
+        .replace(/[\s\-_./]+/g, "");
     }
-
-    var results = searchData.filter(function (item) {
-      var targetText = normalizeText(
-        item.title + " " + item.category + " " + item.description + " " + item.keywords
-      );
-
-      return targetText.indexOf(normalizedKeyword) > -1;
-    });
-
-    if (!results.length) {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">검색 결과가 없습니다.</p>';
-      return;
+    function message(value) {
+      box.replaceChildren();
+      var p=document.createElement("p");
+      p.className="pv-search-empty";
+      p.textContent=value;
+      box.appendChild(p);
     }
-
-    resultBox.innerHTML = results.map(createResultItem).join("");
+    function show(results) {
+      box.replaceChildren();
+      results.forEach(function (item) {
+        var link=document.createElement("a");
+        link.className="pv-search-result";
+        link.href=item.url;
+        var category=document.createElement("span"); category.textContent=item.category || "";
+        var heading=document.createElement("strong"); heading.textContent=item.title || "";
+        var description=document.createElement("p"); description.textContent=item.description || "";
+        link.append(category,heading,description);
+        box.appendChild(link);
+      });
+    }
+    function search() {
+      var q=normalize(input.value);
+      if (!q) {message(dictionary.prompt);return;}
+      if (!loaded) {message(dictionary.loading);return;}
+      var results=items.filter(function(item){
+        return normalize([item.title,item.category,item.description,item.keywords,item.url].join(" ")).includes(q);
+      });
+      if (!results.length) {message(dictionary.none);return;}
+      results.sort(function(a,b) {
+        var at=normalize(a.title),bt=normalize(b.title);
+        return (bt===q?1:bt.startsWith(q)?0.5:0)-(at===q?1:at.startsWith(q)?0.5:0);
+      });
+      show(results);
+    }
+    input.addEventListener("input",search);
+    var params=new URLSearchParams(location.search);
+    var query=params.get("q");
+    if(query)input.value=query;
+    search();
+    fetch("assets/data/search-data.json",{cache:"no-cache"})
+      .then(function(res){if(!res.ok)throw new Error("Search data fetch failed");return res.json();})
+      .then(function(data){if(!Array.isArray(data))throw new Error("Invalid search data");items=data;loaded=true;search();})
+      .catch(function(){loaded=true;message(dictionary.error);});
   }
-
-  /**
-   * 입력 이벤트
-   */
-  input.addEventListener("input", function () {
-    runSearch(input.value);
-  });
-
-  /**
-   * URL query 검색 지원
-   * 예: search.html?q=dl100
-   */
-  document.addEventListener("DOMContentLoaded", function () {
-    var params = new URLSearchParams(window.location.search);
-    var query = params.get("q");
-
-    if (query) {
-      input.value = query;
-      runSearch(query);
-    }
-  });
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);
+  else init();
 })();
