@@ -2240,3 +2240,16 @@ html.pv-app-modal-open{overflow:hidden}
 .pv-nav-sub-name{font-size:15px!important}
 .pv-nav-sub-desc{font-size:12px!important;color:#888!important}
 @media(max-width:1024px){.pv-nav-sub-inner{width:310px!important}}
+
+/* 2026-11-02 Section rhythm and left-aligned product menu */
+.pv-nav-sub{left:0!important;transform:none!important;transform-origin:top left!important}
+.pv-nav-sub-inner,.pv-nav-sub-group,.pv-nav-sub-link,.pv-nav-sub-text{text-align:left!important}
+.pv-nav-sub-inner{margin-left:0!important}
+.pv-home-products{background:#f7f8f9!important;padding-top:84px!important;padding-bottom:100px!important}
+.pv-home-products .pv-home-product-card{background:#fff!important;border:1px solid #eceef0!important}
+.pv-home-feature{background:#f7f8f9!important;padding-top:96px!important;padding-bottom:110px!important}
+.pv-home-feature-box{background:#fff!important;border:1px solid #eceef0!important}
+@media(max-width:768px){
+ .pv-home-products{padding-top:62px!important;padding-bottom:72px!important}
+ .pv-home-feature{padding-top:74px!important;padding-bottom:82px!important}
+}
