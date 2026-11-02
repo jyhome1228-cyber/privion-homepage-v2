@@ -769,7 +769,7 @@ function ready(){
  form.appendChild(box);
  let index=[],loaded=false;
  const fallback=[{"title":"DL100","category":"Products","description":"Compact industrial detection LiDAR","url":"product-dl100.html","keywords":"dl100 lidar"},{"title":"DL100S","category":"Products","description":"Industrial detection and scanning LiDAR","url":"product-dl100s.html","keywords":"dl100s"},{"title":"DL100FL","category":"Systems","description":"Forklift safety system","url":"product-dl100fl.html","keywords":"dl100fl forklift"},{"title":"DL150","category":"Products","description":"Outdoor detection LiDAR","url":"product-dl150.html","keywords":"dl150"},{"title":"DL150S","category":"Products","description":"Outdoor detection and scanning","url":"product-dl150s.html","keywords":"dl150s"}];
- function normalize(x){return String(x||'').normalize('NFKC').toLowerCase().replace(/[\\s._\\/-]+/g,'');}
+ function normalize(x){return String(x||'').normalize('NFKC').toLowerCase().replace(/[\s._\/-]+/g,'');}
  function render(){
   box.replaceChildren();
   const q=normalize(input.value);
