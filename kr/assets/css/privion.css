@@ -2430,3 +2430,17 @@ html.pv-app-modal-open{overflow:hidden}
 @media(max-width:768px){
  .pv-contact-heading{font-size:28px!important;font-weight:650!important}
 }
+
+/* Homepage hero: gentle sequential reveal, accessible reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .pv-home-hero-lead,.pv-home-hero-title,.pv-home-hero-sub{
+    animation:pvHeroReveal .85s cubic-bezier(.18,.7,.24,1) both;
+  }
+  .pv-home-hero-lead{animation-delay:.08s}
+  .pv-home-hero-title{animation-delay:.28s}
+  .pv-home-hero-sub{animation-delay:.48s}
+  @keyframes pvHeroReveal{
+    from{opacity:0;transform:translateY(18px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+}
