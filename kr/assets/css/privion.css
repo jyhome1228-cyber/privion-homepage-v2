@@ -2322,3 +2322,28 @@ html.pv-app-modal-open{overflow:hidden}
     padding-right: 32px !important;
   }
 }
+
+/* 2026-11-02 aligned header / footer / content grid */
+@media (min-width: 1025px) {
+  .pv-container,
+  .pv-header-inner,
+  .pv-footer-inner {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .pv-header-inner { grid-template-columns: 180px minmax(0,1fr) 150px !important; }
+  .pv-footer-inner { max-width: 1440px !important; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pv-header-inner,
+  .pv-footer-inner,
+  .pv-container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
