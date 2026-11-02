@@ -8,7 +8,7 @@
 <script>
 (function(){
   var language=(navigator.language||'en').toLowerCase();
-  var target='kr/'; // Preview: EN site is not published yet
+  var target=language.startsWith('ko')?'kr/':'en/';
   window.location.replace(target+'index.html');
 })();
 </script>
