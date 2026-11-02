@@ -754,3 +754,50 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
+
+/* Live header search suggestions: independent of the search results page */
+(function(){
+function ready(){
+ const panel=document.getElementById('pv-header-search-panel');
+ if(!panel||panel.querySelector('.pv-search-suggestions'))return;
+ const input=panel.querySelector('input[name="q"]');
+ const form=panel.querySelector('form');
+ if(!input||!form)return;
+ const en=document.documentElement.lang.toLowerCase().startsWith('en');
+ const box=document.createElement('div');box.className='pv-search-suggestions';box.setAttribute('aria-live','polite');
+ form.appendChild(box);
+ let index=[],loaded=false;
+ const fallback=[{"title":"DL100","category":"Products","description":"Compact industrial detection LiDAR","url":"product-dl100.html","keywords":"dl100 lidar"},{"title":"DL100S","category":"Products","description":"Industrial detection and scanning LiDAR","url":"product-dl100s.html","keywords":"dl100s"},{"title":"DL100FL","category":"Systems","description":"Forklift safety system","url":"product-dl100fl.html","keywords":"dl100fl forklift"},{"title":"DL150","category":"Products","description":"Outdoor detection LiDAR","url":"product-dl150.html","keywords":"dl150"},{"title":"DL150S","category":"Products","description":"Outdoor detection and scanning","url":"product-dl150s.html","keywords":"dl150s"}];
+ function normalize(x){return String(x||'').normalize('NFKC').toLowerCase().replace(/[\\s._\\/-]+/g,'');}
+ function render(){
+  box.replaceChildren();
+  const q=normalize(input.value);
+  if(!q){box.hidden=true;return;}
+  box.hidden=false;
+  const all=index.concat(fallback.filter(x=>!index.some(y=>y.url===x.url)));
+  const hits=all.filter(x=>normalize([x.title,x.description,x.category,x.keywords,x.url].join(' ')).includes(q)).sort((a,b)=>Number(normalize(b.title).startsWith(q))-Number(normalize(a.title).startsWith(q))).slice(0,6);
+  if(!hits.length){const p=document.createElement('p');p.className='pv-search-no-results';p.textContent=en?'No matching pages.':'검색 결과가 없습니다.';box.append(p);return;}
+  const heading=document.createElement('p');heading.className='pv-search-suggestions-heading';heading.textContent=en?'Related results':'관련 검색 결과';box.append(heading);
+  hits.forEach(x=>{
+   const link=document.createElement('a');link.className='pv-search-suggestion';link.href=x.url;
+   const contents=document.createElement('span');contents.className='pv-search-suggestion-text';
+   const title=document.createElement('strong');title.textContent=x.title;
+   const desc=document.createElement('small');desc.textContent=x.description||'';
+   contents.append(title,desc);
+   const category=document.createElement('em');category.textContent=x.category||'';
+   link.append(contents,category);box.append(link);
+  });
+ }
+ input.addEventListener('input',render);
+ form.addEventListener('submit',function(e){
+   const q=normalize(input.value);if(!q)return;
+   e.preventDefault();
+   const first=box.querySelector('.pv-search-suggestion');
+   if(first)location.assign(first.getAttribute('href'));
+   else location.assign('search.html?q='+encodeURIComponent(input.value));
+ });
+ fetch('assets/data/search-data.json').then(r=>{if(!r.ok)throw Error('index');return r.json()}).then(data=>{index=Array.isArray(data)?data:[];loaded=true;render()}).catch(()=>{loaded=true;render()});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
