@@ -1,82 +1,62 @@
-/* =========================================================
-   PRIVION SEARCH JS — ENGLISH SITE
-   Static search powered by assets/data/search-data.json
-========================================================= */
-
+/* PRIVION site search — case-insensitive, URL query and async data-safe */
 (function () {
   "use strict";
-
-  var input = document.getElementById("pv-search-input");
-  var resultBox = document.getElementById("pv-search-results");
-
-  if (!input || !resultBox) return;
-
-  var searchData = [];
-
-  fetch("assets/data/search-data.json")
-    .then(function (response) {
-      if (!response.ok) throw new Error("Search data load failed");
-      return response.json();
-    })
-    .then(function (data) {
-      searchData = data;
-    })
-    .catch(function () {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">Search data could not be loaded.</p>';
-    });
-
-  function normalizeText(value) {
-    return String(value || "")
-      .toLowerCase()
-      .replace(/\s+/g, "");
-  }
-
-  function createResultItem(item) {
-    return (
-      '<a href="' + item.url + '" class="pv-search-result">' +
-      "<span>" + item.category + "</span>" +
-      "<strong>" + item.title + "</strong>" +
-      "<p>" + item.description + "</p>" +
-      "</a>"
-    );
-  }
-
-  function runSearch(keyword) {
-    var normalizedKeyword = normalizeText(keyword);
-
-    if (!normalizedKeyword) {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">Enter a keyword to view relevant pages.</p>';
-      return;
+  function init() {
+    var input = document.getElementById("pv-search-input");
+    var box = document.getElementById("pv-search-results");
+    if (!input || !box) return;
+    var items = [];
+    var loaded = false;
+    var dictionary = {"prompt":"Enter a keyword to view relevant pages.","none":"No results found.","error":"Search data could not be loaded.","loading":"Loading search results..."};
+    function normalize(value) {
+      return String(value == null ? "" : value)
+        .normalize("NFKC").toLocaleLowerCase()
+        .replace(/[\s\-_./]+/g, "");
     }
-
-    var results = searchData.filter(function (item) {
-      var targetText = normalizeText(
-        item.title + " " + item.category + " " + item.description + " " + item.keywords
-      );
-      return targetText.indexOf(normalizedKeyword) > -1;
-    });
-
-    if (!results.length) {
-      resultBox.innerHTML =
-        '<p class="pv-search-empty">No results found.</p>';
-      return;
+    function message(value) {
+      box.replaceChildren();
+      var p=document.createElement("p");
+      p.className="pv-search-empty";
+      p.textContent=value;
+      box.appendChild(p);
     }
-
-    resultBox.innerHTML = results.map(createResultItem).join("");
+    function show(results) {
+      box.replaceChildren();
+      results.forEach(function (item) {
+        var link=document.createElement("a");
+        link.className="pv-search-result";
+        link.href=item.url;
+        var category=document.createElement("span"); category.textContent=item.category || "";
+        var heading=document.createElement("strong"); heading.textContent=item.title || "";
+        var description=document.createElement("p"); description.textContent=item.description || "";
+        link.append(category,heading,description);
+        box.appendChild(link);
+      });
+    }
+    function search() {
+      var q=normalize(input.value);
+      if (!q) {message(dictionary.prompt);return;}
+      if (!loaded) {message(dictionary.loading);return;}
+      var results=items.filter(function(item){
+        return normalize([item.title,item.category,item.description,item.keywords,item.url].join(" ")).includes(q);
+      });
+      if (!results.length) {message(dictionary.none);return;}
+      results.sort(function(a,b) {
+        var at=normalize(a.title),bt=normalize(b.title);
+        return (bt===q?1:bt.startsWith(q)?0.5:0)-(at===q?1:at.startsWith(q)?0.5:0);
+      });
+      show(results);
+    }
+    input.addEventListener("input",search);
+    var params=new URLSearchParams(location.search);
+    var query=params.get("q");
+    if(query)input.value=query;
+    search();
+    fetch("assets/data/search-data.json",{cache:"no-cache"})
+      .then(function(res){if(!res.ok)throw new Error("Search data fetch failed");return res.json();})
+      .then(function(data){if(!Array.isArray(data))throw new Error("Invalid search data");items=data;loaded=true;search();})
+      .catch(function(){loaded=true;message(dictionary.error);});
   }
-
-  input.addEventListener("input", function () {
-    runSearch(input.value);
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var params = new URLSearchParams(window.location.search);
-    var query = params.get("q");
-    if (query) {
-      input.value = query;
-      runSearch(query);
-    }
-  });
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);
+  else init();
 })();
