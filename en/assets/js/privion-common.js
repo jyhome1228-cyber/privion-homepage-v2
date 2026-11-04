@@ -231,6 +231,7 @@
       if (descriptions[index]) node.textContent = descriptions[index];
     });
 
+    if (!one(".pv-home-feature.pv-feature-static")) {
     text(".pv-home-feature-title", "Reliable Detection Performance in Complex Industrial Environments");
     html(
       ".pv-home-feature-desc",
@@ -246,6 +247,8 @@
     all(".pv-home-feature-box").forEach(function (node, index) {
       if (features[index]) node.textContent = features[index];
     });
+    }
+
   }
 
   function translateTechnology() {
