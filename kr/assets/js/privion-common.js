@@ -278,7 +278,7 @@
    }
   }
   if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var targets=document.querySelectorAll('main section:not(.pv-home-hero):not(.pv-home-rolling):not(.pv-home-app-card), main .pv-product-card, main .pv-home-product-card, main .pv-system-card, main .pv-tech-row, main .pv-application-item, main .pv-other-card');
+  var targets=document.querySelectorAll('main section:not(.pv-home-hero):not(.pv-home-rolling):not(.pv-home-app-card):not(.pv-feature-static), main .pv-product-card, main .pv-home-product-card, main .pv-system-card, main .pv-tech-row, main .pv-application-item, main .pv-other-card');
   var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}})},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
   targets.forEach(function(el){el.classList.add('pv-reveal');observer.observe(el);});
   document.documentElement.classList.add('pv-motion-ready');
