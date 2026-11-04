@@ -2590,3 +2590,15 @@ html.pv-app-modal-open{overflow:hidden}
   .pv-home-hero-title { font-size: clamp(44px, 11vw, 52px) !important; }
   .pv-home-hero-sub { font-size: 13px !important; }
 }
+
+
+/* Stable product-benefit presentation — do not hide content in reveal animations */
+.pv-feature-static .pv-home-feature-heading{margin-bottom:40px!important}
+.pv-feature-static .pv-home-feature-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}
+.pv-feature-static .pv-home-feature-box{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;min-height:250px!important;padding:32px!important;background:#fff!important;border:1px solid #e7e9ec!important}
+.pv-feature-static .pv-feature-index,.pv-feature-static .pv-home-feature-box h3,.pv-feature-static .pv-home-feature-box p{display:block!important;visibility:visible!important;opacity:1!important;transform:none!important;position:static!important}
+.pv-feature-static .pv-feature-index{margin:0 0 20px!important;color:#29abe2!important;font-size:12px!important}
+.pv-feature-static .pv-home-feature-box h3{margin:0 0 15px!important;color:#111!important;font-size:21px!important;line-height:1.4!important}
+.pv-feature-static .pv-home-feature-box p{margin:0!important;color:#666!important;font-size:14px!important;line-height:1.75!important;font-weight:400!important}
+@media(max-width:1024px){.pv-feature-static .pv-home-feature-box{padding:26px 22px!important}}
+@media(max-width:768px){.pv-feature-static .pv-home-feature-grid{grid-template-columns:1fr!important;gap:14px!important}.pv-feature-static .pv-home-feature-box{min-height:auto!important}}
