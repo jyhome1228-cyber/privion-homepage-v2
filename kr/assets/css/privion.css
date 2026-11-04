@@ -2556,3 +2556,37 @@ html.pv-app-modal-open{overflow:hidden}
 .pv-home-feature-grid>.pv-home-feature-box>p{display:block!important;position:static!important;opacity:1!important;visibility:visible!important;color:#666!important;font-size:14px!important;font-weight:400!important;line-height:1.75!important;margin:0!important}
 @media(min-width:769px) and (max-width:1100px){.pv-home-feature-grid{gap:12px!important}.pv-home-feature-grid>.pv-home-feature-box{padding:24px 20px!important}}
 @media(max-width:768px){.pv-home-feature-grid{grid-template-columns:1fr!important;gap:12px!important}.pv-home-feature-grid>.pv-home-feature-box{min-height:0!important;padding:26px 24px!important}}
+
+
+/* 2026-11-04 — enlarged home hero typography and navigation */
+@media (min-width: 1101px) {
+  .pv-header { height: 86px !important; }
+  .pv-nav > a,
+  .pv-nav-item > a { font-size: 18px !important; font-weight: 600 !important; }
+  .pv-home-hero-copy { width: min(55%, 700px) !important; max-width: 700px !important; }
+  .pv-home-hero-lead { font-size: 24px !important; line-height: 1.35 !important; }
+  .pv-home-hero-title { font-size: clamp(82px, 6.4vw, 96px) !important; line-height: 1.02 !important; }
+  .pv-home-hero-sub { font-size: 19px !important; line-height: 1.4 !important; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .pv-header { height: 78px !important; }
+  .pv-nav > a,
+  .pv-nav-item > a { font-size: 16px !important; font-weight: 600 !important; }
+  .pv-home-hero-copy { width: min(61%, 700px) !important; max-width: 700px !important; }
+  .pv-home-hero-lead { font-size: 21px !important; line-height: 1.35 !important; }
+  .pv-home-hero-title { font-size: clamp(66px, 7.8vw, 82px) !important; line-height: 1.03 !important; }
+  .pv-home-hero-sub { font-size: 17px !important; }
+}
+@media (max-width: 768px) {
+  .pv-header { height: 72px !important; }
+  .pv-home-hero-copy { width: 82% !important; max-width: 100% !important; }
+  .pv-home-hero-lead { font-size: 18px !important; line-height: 1.35 !important; }
+  .pv-home-hero-title { font-size: clamp(46px, 10vw, 58px) !important; line-height: 1.07 !important; }
+  .pv-home-hero-sub { font-size: 16px !important; line-height: 1.4 !important; overflow-wrap: anywhere; }
+}
+@media (max-width: 420px) {
+  .pv-home-hero-copy { width: 90% !important; }
+  .pv-home-hero-lead { font-size: 16px !important; }
+  .pv-home-hero-title { font-size: clamp(44px, 11vw, 52px) !important; }
+  .pv-home-hero-sub { font-size: 13px !important; }
+}
