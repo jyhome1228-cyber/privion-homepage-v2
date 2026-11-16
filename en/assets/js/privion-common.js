@@ -416,7 +416,7 @@
     if (!config) return;
 
     text(".pv-product-sub", config.sub);
-    html(".pv-product-desc", config.desc);
+    text(".pv-product-desc", config.desc.replace(/<br\s*\/?>/gi, " ").replace(/\s+/g, " ").trim());
     text(".pv-section-head .pv-section-title", config.sectionTitle);
     text(".pv-section-head .pv-section-desc", config.sectionDesc);
 
