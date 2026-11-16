@@ -2602,3 +2602,32 @@ html.pv-app-modal-open{overflow:hidden}
 .pv-feature-static .pv-home-feature-box p{margin:0!important;color:#666!important;font-size:14px!important;line-height:1.75!important;font-weight:400!important}
 @media(max-width:1024px){.pv-feature-static .pv-home-feature-box{padding:26px 22px!important}}
 @media(max-width:768px){.pv-feature-static .pv-home-feature-grid{grid-template-columns:1fr!important;gap:14px!important}.pv-feature-static .pv-home-feature-box{min-height:auto!important}}
+
+
+/* English localization QA: allow technical labels to wrap naturally */
+html[lang="en"] .pv-nav-sub-desc{
+  white-space:normal!important;
+  overflow-wrap:break-word;
+  line-height:1.5!important;
+}
+html[lang="en"] .pv-spec-table th{
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  line-height:1.55!important;
+  padding-right:12px!important;
+}
+html[lang="en"] .pv-spec-table td:last-child{
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:break-word!important;
+  line-height:1.6!important;
+}
+html[lang="en"] .pv-spec-table td.pv-arrow{
+  width:28px!important;
+}
+@media(max-width:768px){
+ html[lang="en"] .pv-spec-table th{font-size:12px!important;width:36%!important}
+ html[lang="en"] .pv-spec-table td{font-size:12px!important}
+ html[lang="en"] .pv-spec-table td.pv-arrow{width:20px!important}
+}
